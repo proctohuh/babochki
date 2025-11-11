@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Бабочки и жуки Рязанской области</title>
     <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
             background: #000;
@@ -27,9 +27,11 @@
         .overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.02);
+            background: rgba(0,0,30,0.93);
             z-index: -1;
         }
+
+        /* === НАВИГАЦИЯ === */
         header {
             background: linear-gradient(to bottom, rgba(0,51,102,0.98), rgba(0,0,51,0.98));
             padding: 8px;
@@ -49,45 +51,118 @@
         .nav a:hover { transform: scale(1.1); box-shadow: 0 0 16px #0ff; }
         .nav a img { width: 100%; height: 100%; object-fit: cover; }
         .nav a.home { background: #113 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300f"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>') center/60% no-repeat; }
-        .nav a.info { background: #113 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300f"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="7" r="1.5" fill="%23000"/><path d="M12 10h1v7h-1z"/></svg>') center/60% no-repeat; }
+        .nav a.info { background: #113 url('https://cdn-icons-png.flaticon.com/512/69/69544.png') center/70% no-repeat; background-size: 70%; }
         .search-box { flex: 1; max-width: 180px; }
         .search-box input { width: 100%; padding: 6px; border: 2px solid #00f; background: #113; color: #0ff; border-radius: 6px; }
         .new-badge { position: absolute; top: -6px; right: -6px; background: #f00; color: #fff; font-size: 10px; padding: 2px 4px; border-radius: 4px; animation: p 2s infinite; }
         @keyframes p { 50% { transform: scale(1.2); } }
 
-        main { flex: 1; padding: 20px; max-width: 900px; margin: 0 auto; text-align: center; }
-        h1 { color: #00f; text-shadow: 0 0 8px #0ff; font-size: 1.8rem; margin-bottom: 8px; }
-        h1 + p { color: #0af; font-style: italic; margin-bottom: 30px; }
+        /* === ГЛАВНЫЙ КОНТЕНТ === */
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #00f;
+            text-shadow: 0 0 8px #0ff;
+            font-size: clamp(1.5rem, 5vw, 2.2rem);
+            margin-bottom: 8px;
+        }
+        h1 + p {
+            text-align: center;
+            color: #0af;
+            font-style: italic;
+            margin-bottom: 30px;
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
+        }
+
+        /* === ГАЛЕРЕЯ 3×2 — АДАПТИВ НА ПРОЦЕНТАХ === */
         .gallery {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; justify-items: center;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(15px, 3vw, 30px);
+            justify-items: center;
+            padding: 0 clamp(10px, 2vw, 20px);
         }
         .item {
-            background: rgba(0,10,30,0.85); padding: 12px; border-radius: 12px; border: 1px solid #00f;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background: rgba(0,10,30,0.85);
+            border-radius: 12px;
+            border: 2px solid #00f;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
             transition: 0.3s;
+            box-shadow: 0 0 15px rgba(0,255,255,0.3);
         }
-        .item:hover { background: rgba(0,10,30,0.95); box-shadow: 0 0 20px #0ff; }
+        .item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px #0ff;
+            background: rgba(0,10,30,0.95);
+        }
+        .item a {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            text-decoration: none;
+        }
         .item img {
-            width: 100%; max-width: 240px; border: 3px solid #00f; border-radius: 12px; box-shadow: 0 0 20px #0f0; transition: 0.3s;
+            width: 100%;
+            height: 70%;
+            object-fit: contain;
+            padding: 10px;
+            background: transparent;
         }
-        .item a:hover img { transform: scale(1.05); box-shadow: 0 0 30px #0ff; }
-        .item p { margin-top: 10px; color: #0f0; font-weight: bold; text-shadow: 0 0 5px #000; }
+        .item p {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8px;
+            color: #0f0;
+            font-weight: bold;
+            font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+            text-shadow: 0 0 5px #000;
+            margin: 0;
+        }
 
-        .nav a.active { border-color: #0ff !important; box-shadow: 0 0 16px #0ff; }
-        .nav a.active::before, .nav a.active::after {
-            content: ''; position: absolute; width: 12px; height: 3px; background: #0ff; top: 50%; transform: translateY(-50%);
+        /* === ПОДСВЕТКА АКТИВНОЙ ССЫЛКИ === */
+        .nav a.active {
+            border-color: #0ff !important;
+            box-shadow: 0 0 16px #0ff;
+        }
+        .nav a.active::before,
+        .nav a.active::after {
+            content: '';
+            position: absolute;
+            width: 12px; height: 3px; background: #0ff;
+            top: 50%; transform: translateY(-50%);
         }
         .nav a.active::before { left: -10px; }
         .nav a.active::after { right: -10px; }
 
+        /* === МОБИЛЬНАЯ АДАПТАЦИЯ === */
+        @media (max-width: 900px) {
+            .gallery { grid-template-columns: repeat(2, 1fr); }
+        }
         @media (max-width: 600px) {
+            .nav { gap: 6px; }
             .nav a { width: 40px; height: 40px; }
-            h1 { font-size: 1.5rem; }
-            .item img { max-width: 180px; }
+            .search-box { max-width: 120px; }
+            .search-box input { font-size: 12px; }
         }
     </style>
 </head>
 <body>
     <div class="overlay"></div>
+
+    <!-- НАВИГАЦИЯ -->
     <header>
         <nav class="nav">
             <a href="index.html" class="home active" title="Главная"></a>
@@ -101,9 +176,12 @@
             <div class="search-box"><input type="text" placeholder="Поиск..."></div>
         </nav>
     </header>
+
+    <!-- ГЛАВНЫЙ КОНТЕНТ -->
     <main>
         <h1>БАБОЧКИ И ЖУКИ РЯЗАНСКОЙ ОБЛАСТИ</h1>
         <p>а также некоторые другие насекомые...</p>
+
         <div class="gallery">
             <div class="item">
                 <a href="dnevnie.html">
