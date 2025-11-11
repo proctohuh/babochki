@@ -21,13 +21,13 @@
             top: 0; left: 0; width: 100%; height: 100%;
             background: url('https://img.freepik.com/premium-photo/butterflies-symphony-colors_1170794-83990.jpg?semt=ais_hybrid&w=740&q=80') center/cover no-repeat;
             background-attachment: fixed;
-            filter: brightness(0.4);
+            filter: brightness(0.35);
             z-index: -2;
         }
         .overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.2);
+            background: rgba(0,0,0,0.02);
             z-index: -1;
         }
         header {
@@ -62,8 +62,10 @@
             display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; justify-items: center;
         }
         .item {
-            background: rgba(0,10,30,0.8); padding: 12px; border-radius: 12px; border: 1px solid #00f;
+            background: rgba(0,10,30,0.85); padding: 12px; border-radius: 12px; border: 1px solid #00f;
+            transition: 0.3s;
         }
+        .item:hover { background: rgba(0,10,30,0.95); box-shadow: 0 0 20px #0ff; }
         .item img {
             width: 100%; max-width: 240px; border: 3px solid #00f; border-radius: 12px; box-shadow: 0 0 20px #0f0; transition: 0.3s;
         }
@@ -89,12 +91,12 @@
     <header>
         <nav class="nav">
             <a href="index.html" class="home active" title="Главная"></a>
-            <a href="dnevnie.html" title="Дневные"><img src="dnevnie.png" alt=""><span class="new-badge">NEW</span></a>
-            <a href="mikro.html" title="Микро"><img src="mikro.png" alt=""></a>
-            <a href="nochnye.html" title="Ночные"><img src="nochnye.png" alt=""></a>
-            <a href="gusenicy.html" title="Гусеницы"><img src="gusenicy.png" alt=""></a>
-            <a href="juki.html" title="Жуки"><img src="juki.png" alt=""></a>
-            <a href="lojnogusenicy.html" title="Ложногусеницы"><img src="lojnogusenicy.png" alt=""></a>
+            <a href="dnevnie.html" title="Дневные"><img src="https://png.klev.club/uploads/posts/2024-04/png-klev-club-oyjh-p-belaya-babochka-png-11.png" alt=""><span class="new-badge">NEW</span></a>
+            <a href="mikro.html" title="Микро"><img src="https://png.klev.club/uploads/posts/2024-05/png-klev-club-to2d-p-mol-png-3.png" alt=""></a>
+            <a href="nochnye.html" title="Ночные"><img src="https://png.pngtree.com/png-clipart/20240811/original/pngtree-bagworm-moths-stealthy-cocoon-weaver-on-png-image_15750283.png" alt=""></a>
+            <a href="gusenicy.html" title="Гусеницы"><img src="https://png.pngtree.com/png-clipart/20250507/original/pngtree-bright-green-caterpillar-with-detailed-body-segments-and-tiny-legs-png-image_20943875.png" alt=""></a>
+            <a href="juki.html" title="Жуки"><img src="https://w7.pngwing.com/pngs/685/278/png-transparent-black-beetle-illustration-japanese-rhinoceros-beetle-beetle-bug-image-file-formats-presentation-insects-thumbnail.png" alt=""></a>
+            <a href="lojnogusenicy.html" title="Ложногусеницы"><img src="https://png.pngtree.com/png-clipart/20250507/original/pngtree-bright-green-caterpillar-with-detailed-body-segments-and-tiny-legs-png-image_20943875.png" alt=""></a>
             <a href="about.html" class="info" title="О сайте"></a>
             <div class="search-box"><input type="text" placeholder="Поиск..."></div>
         </nav>
@@ -103,18 +105,51 @@
         <h1>БАБОЧКИ И ЖУКИ РЯЗАНСКОЙ ОБЛАСТИ</h1>
         <p>а также некоторые другие насекомые...</p>
         <div class="gallery">
-            <div class="item"><a href="dnevnie.html"><img src="dnevnie.png" alt=""><p>Дневные (булавоусые) бабочки.</p></a></div>
-            <div class="item"><a href="mikro.html"><img src="mikro.png" alt=""><p>Микрочешуекрылые.</p></a></div>
-            <div class="item"><a href="nochnye.html"><img src="nochnye.png" alt=""><p>Ночные (разноусые) бабочки.</p></a></div>
-            <div class="item"><a href="gusenicy.html"><img src="gusenicy.png" alt=""><p>Гусеницы бабочек.</p></a></div>
-            <div class="item"><a href="juki.html"><img src="juki.png" alt=""><p>Жуки.</p></a></div>
-            <div class="item"><a href="lojnogusenicy.html"><img src="lojnogusenicy.png" alt=""><p>Ложногусеницы пилильщиков.</p></a></div>
+            <div class="item">
+                <a href="dnevnie.html">
+                    <img src="https://png.klev.club/uploads/posts/2024-04/png-klev-club-oyjh-p-belaya-babochka-png-11.png" alt="Дневные бабочки">
+                    <p>Дневные (булавоусые) бабочки.</p>
+                </a>
+            </div>
+            <div class="item">
+                <a href="mikro.html">
+                    <img src="https://png.klev.club/uploads/posts/2024-05/png-klev-club-to2d-p-mol-png-3.png" alt="Микрочешуекрылые">
+                    <p>Микрочешуекрылые.</p>
+                </a>
+            </div>
+            <div class="item">
+                <a href="nochnye.html">
+                    <img src="https://png.pngtree.com/png-clipart/20240811/original/pngtree-bagworm-moths-stealthy-cocoon-weaver-on-png-image_15750283.png" alt="Ночные бабочки">
+                    <p>Ночные (разноусые) бабочки.</p>
+                </a>
+            </div>
+            <div class="item">
+                <a href="gusenicy.html">
+                    <img src="https://png.pngtree.com/png-clipart/20250507/original/pngtree-bright-green-caterpillar-with-detailed-body-segments-and-tiny-legs-png-image_20943875.png" alt="Гусеницы">
+                    <p>Гусеницы бабочек.</p>
+                </a>
+            </div>
+            <div class="item">
+                <a href="juki.html">
+                    <img src="https://w7.pngwing.com/pngs/685/278/png-transparent-black-beetle-illustration-japanese-rhinoceros-beetle-beetle-bug-image-file-formats-presentation-insects-thumbnail.png" alt="Жуки">
+                    <p>Жуки.</p>
+                </a>
+            </div>
+            <div class="item">
+                <a href="lojnogusenicy.html">
+                    <img src="https://png.pngtree.com/png-clipart/20250507/original/pngtree-bright-green-caterpillar-with-detailed-body-segments-and-tiny-legs-png-image_20943875.png" alt="Ложногусеницы">
+                    <p>Ложногусеницы пилильщиков.</p>
+                </a>
+            </div>
         </div>
     </main>
+
     <script>
-        const cur = location.pathname.split('/').pop() || 'index.html';
+        // Подсветка активной страницы
+        const current = location.pathname.split('/').pop() || 'index.html';
         document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
-        document.querySelector(`.nav a[href="${cur}"]`)?.classList.add('active');
+        const activeLink = document.querySelector(`.nav a[href="${current}"]`);
+        if (activeLink) activeLink.classList.add('active');
     </script>
 </body>
 </html>
