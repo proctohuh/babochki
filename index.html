@@ -6,36 +6,48 @@
     <title>Бабочки и жуки Рязанской области</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
+        html, body {
+            height: 100%;
             font-family: 'Comic Sans MS', cursive, sans-serif;
-            background: #000;
             color: #0f0;
+        }
+        body {
+            background: #000;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            background-image: url('https://img.freepik.com/premium-photo/butterflies-symphony-colors_1170794-83990.jpg?semt=ais_hybrid&w=740&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
+            position: relative;
+            overflow-x: hidden;
         }
-        /* Затемнение фона для читаемости */
+
+        /* ФОН — ПОЛНОЭКРАННЫЙ, НО ПОД КОНТЕНТОМ */
         body::before {
             content: '';
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 20, 0.88);
+            background: url('https://img.freepik.com/premium-photo/butterflies-symphony-colors_1170794-83990.jpg?semt=ais_hybrid&w=740&q=80') center/cover no-repeat;
+            background-attachment: fixed;
+            z-index: -2;
+            filter: brightness(0.7) contrast(1.1);
+        }
+
+        /* ТЁМНАЯ ПОДЛОЖКА ПОД КОНТЕНТ — ДЛЯ ЧИТАЕМОСТИ */
+        .content-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 30, 0.85);
             z-index: -1;
+            backdrop-filter: blur(1px);
         }
 
         header {
-            background: linear-gradient(to bottom, rgba(0, 51, 102, 0.95), rgba(0, 0, 51, 0.95));
+            background: linear-gradient(to bottom, rgba(0, 51, 102, 0.98), rgba(0, 0, 51, 0.98));
             padding: 8px 4px;
             border-bottom: 3px solid #00f;
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(4px);
+            backdrop-filter: blur(6px);
         }
         .nav {
             display: flex;
@@ -106,6 +118,8 @@
             max-width: 900px;
             margin: 0 auto;
             width: 100%;
+            position: relative;
+            z-index: 1;
         }
         h1 {
             text-align: center;
@@ -130,6 +144,10 @@
         .item {
             text-align: center;
             max-width: 260px;
+            background: rgba(0, 10, 30, 0.7);
+            padding: 10px;
+            border-radius: 12px;
+            border: 1px solid #00f;
         }
         .item a {
             display: block;
@@ -154,6 +172,7 @@
             text-shadow: 0 0 5px #000;
             font-size: 1.1rem;
         }
+
         .content {
             background: rgba(0, 10, 30, 0.9);
             padding: 20px;
@@ -180,8 +199,9 @@
             box-shadow: 0 0 15px #0f0;
         }
 
+        /* АКТИВНАЯ ССЫЛКА — ДВЕ ПОЛОСКИ */
         .nav a.active {
-            border-color: #0ff;
+            border-color: #0ff !important;
             box-shadow: 0 0 16px #0ff;
         }
         .nav a.active::before,
@@ -209,34 +229,38 @@
 </head>
 <body>
 
-<header>
-    <nav class="nav" id="nav">
-        <a href="index.html" class="home" title="Главная"></a>
-        <a href="dnevnie.html" title="Дневные бабочки"><img src="dnevnie.png" alt=""><span class="new-badge">NEW</span></a>
-        <a href="mikro.html" title="Микрочешуекрылые"><img src="mikro.png" alt=""></a>
-        <a href="nochnye.html" title="Ночные бабочки"><img src="nochnye.png" alt=""></a>
-        <a href="gusenicy.html" title="Гусеницы бабочек"><img src="gusenicy.png" alt=""></a>
-        <a href="juki.html" title="Жуки"><img src="juki.png" alt=""></a>
-        <a href="lojnogusenicy.html" title="Ложногусеницы пилильщиков"><img src="lojnogusenicy.png" alt=""></a>
-        <a href="about.html" class="info" title="О сайте"></a>
-        <div class="search-box">
-            <input type="text" placeholder="Поиск...">
-        </div>
-    </nav>
-</header>
+    <!-- ТЁМНАЯ ПОДЛОЖКА -->
+    <div class="content-overlay"></div>
 
-<main>
-    <!-- КОНТЕНТ МЕНЯЕТСЯ НА КАЖДОЙ СТРАНИЦЕ -->
-</main>
+    <!-- ВЕРХНЯЯ ПАНЕЛЬ -->
+    <header>
+        <nav class="nav" id="nav">
+            <a href="index.html" class="home" title="Главная"></a>
+            <a href="dnevnie.html" title="Дневные бабочки"><img src="dnevnie.png" alt=""><span class="new-badge">NEW</span></a>
+            <a href="mikro.html" title="Микрочешуекрылые"><img src="mikro.png" alt=""></a>
+            <a href="nochnye.html" title="Ночные бабочки"><img src="nochnye.png" alt=""></a>
+            <a href="gusenicy.html" title="Гусеницы бабочек"><img src="gusenicy.png" alt=""></a>
+            <a href="juki.html" title="Жуки"><img src="juki.png" alt=""></a>
+            <a href="lojnogusenicy.html" title="Ложногусеницы пилильщиков"><img src="lojnogusenicy.png" alt=""></a>
+            <a href="about.html" class="info" title="О сайте"></a>
+            <div class="search-box">
+                <input type="text" placeholder="Поиск...">
+            </div>
+        </nav>
+    </header>
 
-<script>
-    const current = location.pathname.split('/').pop() || 'index.html';
-    const links = document.querySelectorAll('.nav a[href]');
-    links.forEach(link => {
-        if (link.getAttribute('href') === current) {
-            link.classList.add('active');
-        }
-    });
-</script>
+    <main>
+        <!-- КОНТЕНТ МЕНЯЕТСЯ НА КАЖДОЙ СТРАНИЦЕ -->
+    </main>
+
+    <script>
+        // Подсветка активной страницы
+        const currentPage = location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav a[href]').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>
