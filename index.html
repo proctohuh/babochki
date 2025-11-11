@@ -3,24 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бабочки и жуки Московской области</title>
+    <title>Бабочки и жуки Рязанской области</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
-            background: #000 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFUlEQVR42mN8//HLfwYiAOOoQvoqBAAAAABJRU5ErkJggg==') repeat;
+            background: #000;
             color: #0f0;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            background-image: url('https://img.freepik.com/premium-photo/butterflies-symphony-colors_1170794-83990.jpg?semt=ais_hybrid&w=740&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
         }
+        /* Затемнение фона для читаемости */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 20, 0.88);
+            z-index: -1;
+        }
+
         header {
-            background: linear-gradient(to bottom, #003366, #000033);
+            background: linear-gradient(to bottom, rgba(0, 51, 102, 0.95), rgba(0, 0, 51, 0.95));
             padding: 8px 4px;
             border-bottom: 3px solid #00f;
             position: sticky;
             top: 0;
             z-index: 100;
+            backdrop-filter: blur(4px);
         }
         .nav {
             display: flex;
@@ -139,8 +154,32 @@
             text-shadow: 0 0 5px #000;
             font-size: 1.1rem;
         }
+        .content {
+            background: rgba(0, 10, 30, 0.9);
+            padding: 20px;
+            border: 2px solid #00f;
+            border-radius: 12px;
+            box-shadow: 0 0 20px #0f0;
+            margin-top: 20px;
+            color: #0ff;
+            line-height: 1.6;
+            backdrop-filter: blur(2px);
+        }
+        .content h2 {
+            color: #0f0;
+            margin-bottom: 15px;
+            text-align: center;
+            text-shadow: 0 0 8px #0f0;
+        }
+        .content img {
+            max-width: 100%;
+            border: 2px solid #00f;
+            border-radius: 8px;
+            margin: 15px auto;
+            display: block;
+            box-shadow: 0 0 15px #0f0;
+        }
 
-        /* Подсветка текущей секции в навигации */
         .nav a.active {
             border-color: #0ff;
             box-shadow: 0 0 16px #0ff;
@@ -164,6 +203,7 @@
             h1 { font-size: 1.5rem; }
             .gallery { gap: 15px; }
             .item img { max-width: 180px; }
+            .content { padding: 15px; }
         }
     </style>
 </head>
@@ -172,12 +212,12 @@
 <header>
     <nav class="nav" id="nav">
         <a href="index.html" class="home" title="Главная"></a>
-        <a href="dnevnie.html" title="Дневные бабочки"><img src="dnevnie.jpg" alt=""><span class="new-badge">NEW</span></a>
-        <a href="mikro.html" title="Микрочешуекрылые"><img src="mikro.jpg" alt=""></a>
-        <a href="nochnye.html" title="Ночные бабочки"><img src="nochnye.jpg" alt=""></a>
-        <a href="gusenicy.html" title="Гусеницы бабочек"><img src="gusenicy.jpg" alt=""></a>
-        <a href="juki.html" title="Жуки"><img src="juki.jpg" alt=""></a>
-        <a href="lojnogusenicy.html" title="Ложногусеницы пилильщиков"><img src="lojnogusenicy.jpg" alt=""></a>
+        <a href="dnevnie.html" title="Дневные бабочки"><img src="dnevnie.png" alt=""><span class="new-badge">NEW</span></a>
+        <a href="mikro.html" title="Микрочешуекрылые"><img src="mikro.png" alt=""></a>
+        <a href="nochnye.html" title="Ночные бабочки"><img src="nochnye.png" alt=""></a>
+        <a href="gusenicy.html" title="Гусеницы бабочек"><img src="gusenicy.png" alt=""></a>
+        <a href="juki.html" title="Жуки"><img src="juki.png" alt=""></a>
+        <a href="lojnogusenicy.html" title="Ложногусеницы пилильщиков"><img src="lojnogusenicy.png" alt=""></a>
         <a href="about.html" class="info" title="О сайте"></a>
         <div class="search-box">
             <input type="text" placeholder="Поиск...">
@@ -186,63 +226,17 @@
 </header>
 
 <main>
-    <h1>БАБОЧКИ И ЖУКИ МОСКОВСКОЙ ОБЛАСТИ</h1>
-    <p>а также некоторые другие насекомые...</p>
-
-    <div class="gallery">
-        <div class="item">
-            <a href="dnevnie.html">
-                <img src="dnevnie.jpg" alt="Дневные бабочки">
-                <p>Дневные (булавоусые) бабочки.</p>
-            </a>
-        </div>
-        <div class="item">
-            <a href="mikro.html">
-                <img src="mikro.jpg" alt="Микрочешуекрылые">
-                <p>Микрочешуекрылые.</p>
-            </a>
-        </div>
-        <div class="item">
-            <a href="nochnye.html">
-                <img src="nochnye.jpg" alt="Ночные бабочки">
-                <p>Ночные (разноусые) бабочки.</p>
-            </a>
-        </div>
-        <div class="item">
-            <a href="gusenicy.html">
-                <img src="gusenicy.jpg" alt="Гусеницы бабочек">
-                <p>Гусеницы бабочек.</p>
-            </a>
-        </div>
-        <div class="item">
-            <a href="juki.html">
-                <img src="juki.jpg" alt="Жуки">
-                <p>Жуки.</p>
-            </a>
-        </div>
-        <div class="item">
-            <a href="lojnogusenicy.html">
-                <img src="lojnogusenicy.jpg" alt="Ложногусеницы пилильщиков">
-                <p>Ложногусеницы пилильщиков.</p>
-            </a>
-        </div>
-    </div>
+    <!-- КОНТЕНТ МЕНЯЕТСЯ НА КАЖДОЙ СТРАНИЦЕ -->
 </main>
 
 <script>
-    // Подсветка активной ссылки в навигации
     const current = location.pathname.split('/').pop() || 'index.html';
     const links = document.querySelectorAll('.nav a[href]');
     links.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href === current || (current === 'index.html' && href === 'index.html')) {
+        if (link.getAttribute('href') === current) {
             link.classList.add('active');
         }
     });
-
-    // Миниатюры в навигации — используем те же изображения
-    // (уже подключены в HTML)
 </script>
-
 </body>
 </html>
