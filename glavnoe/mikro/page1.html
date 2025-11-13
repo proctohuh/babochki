@@ -108,27 +108,41 @@
             max-width: 1200px;
         }
 
-        /* === ЦЕНТРАЛЬНОЕ ОКНО ПОД КАРТИНКУ === */
+        /* === ЦЕНТРАЛЬНОЕ ОКНО С СИНИМИ ГРАНИЦАМИ === */
         .central-image {
-            width: clamp(150px, 45vw, 500px); /* адаптивно: мин 150px, макс 500px */
-            aspect-ratio: 1;
+            position: relative;
+            width: clamp(200px, 50vw, 600px); /* от 200 до 600px, адаптивно */
             background: rgba(0,10,30,0.9);
-            border: 3px solid #00f;
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 0 20px #0ff;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto clamp(1.5vw, 4vw, 3rem) auto; /* масштабируемый отступ */
+            margin: 0 auto clamp(1.5vw, 4vw, 3rem) auto;
             flex-shrink: 0;
+            padding: 12px; /* внутренний отступ вместо border */
+            box-sizing: border-box;
+        }
+
+        /* Синие границы — отдельный слой */
+        .central-image::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border: 3px solid #00f;
+            border-radius: 16px;
+            pointer-events: none;
+            z-index: 1;
         }
 
         .central-image img {
-            width: 88%;
-            height: 88%;
+            width: 100%;
+            height: 100%;
             object-fit: contain;
             display: block;
+            position: relative;
+            z-index: 0;
         }
 
         /* === ТЕКСТ ПОД КАРТИНКОЙ === */
@@ -190,7 +204,7 @@
     <main>
         <div class="content">
             <div class="central-image">
-                <!-- ОСНОВНАЯ КАРТИНКА (встроена через URL, работает без base64) -->
+                <!-- ОСНОВНАЯ КАРТИНКА -->
                 <img src="https://insectamo.ru/images/micro/roes/erxlebella.jpg" alt="Roeslerstammia erxlebella">
             </div>
             <div class="butterfly-text">Roeslerstammia erxlebella</div>
@@ -198,32 +212,53 @@
     </main>
 
     <script>
+        // === ДИНАМИЧЕСКАЯ ПОДГОНКА РАЗМЕРА КАРТИНКИ ПОД ЭКРАН ===
+        const img = document.querySelector('.central-image img');
+        const container = document.querySelector('.central-image');
+
+        function updateImageSize() {
+            if (!img.naturalWidth || !img.naturalHeight) return;
+
+            const imgW = img.naturalWidth;
+            const imgH = img.naturalHeight;
+            const aspect = imgW / imgH;
+
+            // Максимальный размер: 600px, минимальный: 200px
+            const maxSize = 600;
+            const minSize = 200;
+
+            // Вычисляем целевой размер по ширине экрана
+            let targetSize = window.innerWidth * 0.5; // 50vw
+            targetSize = Math.max(minSize, Math.min(targetSize, maxSize));
+
+            // Учитываем соотношение сторон
+            const containerWidth = targetSize;
+            const containerHeight = containerWidth / aspect;
+
+            // Устанавливаем размеры контейнера
+            container.style.width = `${containerWidth}px`;
+            container.style.height = `${containerHeight}px`;
+
+            // Принудительно обновляем aspect-ratio через style (на случай, если clamp не сработает)
+            container.style.aspectRatio = 'auto';
+        }
+
+        // Запуск при загрузке изображения
+        img.onload = updateImageSize;
+
+        // Запуск при изменении размера окна
+        window.addEventListener('resize', updateImageSize);
+
+        // Если изображение уже загружено (кэш)
+        if (img.complete && img.naturalWidth) {
+            updateImageSize();
+        }
+
         // Подсветка активной ссылки
         const current = location.pathname.split('/').pop() || 'index.html';
         document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
         const activeLink = document.querySelector(`.nav a[href="${current}"]`);
         if (activeLink) activeLink.classList.add('active');
-
-        // === АВТОМАТИЧЕСКАЯ ПОДГОНКА ПОД РАЗМЕР КАРТИНКИ ===
-        const img = document.querySelector('.central-image img');
-        const container = document.querySelector('.central-image');
-
-        img.onload = function() {
-            if (!img.naturalWidth) return;
-
-            const realW = img.naturalWidth;
-            const realH = img.naturalHeight;
-            const maxSize = Math.min(realW, realH, 600); // лимит 600px
-
-            // Устанавливаем адаптивный clamp
-            container.style.width = `clamp(150px, 45vw, ${maxSize}px)`;
-            container.style.aspectRatio = `${realW} / ${realH}`;
-        };
-
-        // Если картинка уже загрузилась
-        if (img.complete && img.naturalWidth) {
-            img.onload();
-        }
     </script>
 </body>
 </html>
