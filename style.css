@@ -1,0 +1,183 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: #000;
+    color: #0f0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://img.freepik.com/premium-photo/butterflies-symphony-colors_1170794-83990.jpg?semt=ais_hybrid&w=740&q=80') center/cover no-repeat;
+    background-attachment: fixed;
+    filter: brightness(0.35);
+    z-index: -2;
+}
+
+.overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: -1;
+}
+
+/* === НАВИГАЦИЯ === */
+header {
+    background: linear-gradient(to bottom, rgba(0,51,102,0.98), rgba(0,0,51,0.98));
+    padding: 8px;
+    border-bottom: 3px solid #00f;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(6px);
+}
+
+.nav {
+    display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 8px;
+}
+
+.nav a {
+    width: 48px; height: 48px; background: #113; border: 2px solid #00f; border-radius: 8px;
+    overflow: hidden; position: relative; transition: 0.2s; box-shadow: 0 0 8px #0f0;
+}
+
+.nav a:hover { transform: scale(1.1); box-shadow: 0 0 16px #0ff; }
+
+.nav a img { width: 100%; height: 100%; object-fit: cover; }
+
+.nav a.home { 
+    background: #113 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300f"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>') center/60% no-repeat; 
+}
+
+.nav a.info { 
+    background: #113 url('https://cdn-icons-png.flaticon.com/512/3357/3357329.png') center/70% no-repeat; 
+    background-size: 70%; 
+}
+
+.search-box { flex: 1; max-width: 180px; }
+.search-box input { 
+    width: 100%; padding: 6px; border: 2px solid #00f; background: #113; color: #0ff; border-radius: 6px; 
+}
+
+.new-badge { 
+    position: absolute; top: -6px; right: -6px; background: #f00; color: #fff; font-size: 10px; padding: 2px 4px; border-radius: 4px; animation: p 2s infinite; 
+}
+
+@keyframes p { 50% { transform: scale(1.2); } }
+
+/* === ГЛАВНЫЙ КОНТЕНТ === */
+main {
+    flex: 1;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #00f;
+    text-shadow: 0 0 8px #0ff;
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+    margin-bottom: 8px;
+}
+
+h1 + p {
+    text-align: center;
+    color: #0af;
+    font-style: italic;
+    margin-bottom: 30px;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+}
+
+/* === ГАЛЕРЕЯ 3×2 — АДАПТИВ НА ПРОЦЕНТАХ === */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(15px, 3vw, 30px);
+    justify-items: center;
+    padding: 0 clamp(10px, 2vw, 20px);
+}
+
+.item {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: rgba(0,10,30,0.85);
+    border-radius: 12px;
+    border: 2px solid #00f;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(0,255,255,0.3);
+}
+
+.item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px #0ff;
+    background: rgba(0,10,30,0.95);
+}
+
+.item a {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+}
+
+.item img {
+    width: 100%;
+    height: 70%;
+    object-fit: contain;
+    padding: 10px;
+    background: transparent;
+}
+
+.item p {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8px;
+    color: #0f0;
+    font-weight: bold;
+    font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+    text-shadow: 0 0 5px #000;
+    margin: 0;
+}
+
+/* === ПОДСВЕТКА АКТИВНОЙ ССЫЛКИ === */
+.nav a.active {
+    border-color: #0ff !important;
+    box-shadow: 0 0 16px #0ff;
+}
+
+.nav a.active::before,
+.nav a.active::after {
+    content: '';
+    position: absolute;
+    width: 12px; height: 3px; background: #0ff;
+    top: 50%; transform: translateY(-50%);
+}
+
+.nav a.active::before { left: -10px; }
+.nav a.active::after { right: -10px; }
+
+/* === МОБИЛЬНАЯ АДАПТАЦИЯ === */
+@media (max-width: 900px) {
+    .gallery { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .nav { gap: 6px; }
+    .nav a { width: 40px; height: 40px; }
+    .search-box { max-width: 120px; }
+    .search-box input { font-size: 12px; }
+}
