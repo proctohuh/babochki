@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О сайте</title>
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        /* Только для текста и отступа — не трогаем style2.css */
+        .central-image {
+            margin-bottom: 8vw !important; /* Масштабируемый отступ */
+        }
+        .butterfly-text {
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            font-size: clamp(1.5rem, 6vw, 3rem);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #222;
+            text-align: center;
+            margin-top: 2vw;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
 
+    <header>
+        <nav class="nav">
+            <a href="index.html" class="home" title="Главная"></a>
+            <a href="dnevnie.html" title="Дневные"><img src="https://png.klev.club/uploads/posts/2024-04/png-klev-club-oyjh-p-belaya-babochka-png-11.png" alt=""></a>
+            <a href="mikro.html" title="Микро"><img src="https://png.klev.club/uploads/posts/2024-05/png-klev-club-to2d-p-mol-png-3.png" alt=""></a>
+            <a href="nochnye.html" title="Ночные"><img src="https://png.pngtree.com/png-clipart/20240811/original/pngtree-bagworm-moths-stealthy-cocoon-weaver-on-png-image_15750283.png" alt=""></a>
+            <a href="gusenicy.html" title="Гусеницы"><img src="https://png.pngtree.com/png-clipart/20250507/original/pngtree-bright-green-caterpillar-with-detailed-body-segments-and-tiny-legs-png-image_20943875.png" alt=""></a>
+            <a href="juki.html" title="Жуки"><img src="https://www.koppert.ru/content/_processed_/f/7/csm_Vine_weevil_Otiorhynchus_sulcatus_Adult_Koppert_4b9004cb49.png" alt=""></a>
+            <a href="lojnogusenicy.html" title="Ложногусеницы"><img src="https://ltdfoto.ru/images/2025/11/12/e9a6ceae-4f5b-4476-ad9e-83ddc84fba16-1.png" alt=""></a>
+            <a href="about.html" class="info active" title="О сайте"></a>
+            <div class="search-box"><input type="text" placeholder="Поиск..."></div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content">
+            <!-- Убираем боковые колонки с ссылками -->
+            
+            <div class="central-image">
+                <img src="https://insectamo.ru/images/micro/roes/erxlebella.jpg" alt="Бабочка">
+            </div>
+            
+            <div class="butterfly-text">Roeslerstammia erxlebella</div>
+        </div>
+    </main>
+
+    <script>
+        const current = location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+        const activeLink = document.querySelector(`.nav a[href="${current}"]`);
+        if (activeLink) activeLink.classList.add('active');
+    </script>
+</body>
+</html>
