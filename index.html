@@ -88,59 +88,6 @@
     </div>
 </div>
 
-<script>
-    // Открытие/закрытие модалки
-    function openSearch() {
-        document.getElementById('search-modal').style.display = 'block';
-    }
-    function closeSearch() {
-        document.getElementById('search-modal').style.display = 'none';
-        document.querySelector('.search-box input').value = '';
-    }
-
-    // Поиск
-    document.querySelector('.search-box input').addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            const query = this.value.trim().toLowerCase();
-            if (!query) return;
-
-            fetch('search-data.json')
-                .then(res => res.json())
-                .then(data => {
-                    const results = data.filter(item => 
-                        item.name.toLowerCase().includes(query)
-                    );
-
-                    const resultsDiv = document.getElementById('search-results');
-                    const noResults = document.getElementById('no-results');
-
-                    if (results.length === 0) {
-                        noResults.style.display = 'block';
-                        resultsDiv.innerHTML = '';
-                    } else {
-                        noResults.style.display = 'none';
-                        resultsDiv.innerHTML = results.map(r => `
-                            <a href="${r.url}" style="display:block; padding:12px; margin:8px 0; background:rgba(0,255,255,0.1); border:1px solid #0ff; border-radius:8px; color:#0ff; text-decoration:none; transition:0.2s;"
-                               onmouseover="this.style.background='rgba(0,255,255,0.2)'"
-                               onmouseout="this.style.background='rgba(0,255,255,0.1)'">
-                                <strong>${r.name}</strong>
-                            </a>
-                        `).join('');
-                    }
-
-                    openSearch();
-                })
-                .catch(err => {
-                    alert('Ошибка загрузки данных поиска');
-                    console.error(err);
-                });
-        }
-    });
-
-    // Закрытие по клику вне окна
-    document.getElementById('search-modal').addEventListener('click', function(e) {
-        if (e.target === this) closeSearch();
-    });
-</script>
+<script src="search.js"></script>
 </body>
 </html>
