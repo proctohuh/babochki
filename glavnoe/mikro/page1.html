@@ -1,184 +1,229 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<title>Roeslerstammia erxlebella</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-/* ──────────────────────────────────────
-   СБРОС
-   ────────────────────────────────────── */
-html,body{margin:0;padding:0;height:100%;width:100%}
-*{box-sizing:border-box}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roeslerstammia erxlebella</title>
+    <style>
+        /* === СБРОС ОТСТУПОВ === */
+        html, body {
+            margin: 0; padding: 0; height: 100%; width: 100%;
+        }
+        * { box-sizing: border-box; }
 
-/* ──────────────────────────────────────
-   ОСНОВНОЕ
-   ────────────────────────────────────── */
-body{
-    font-family:'Comic Sans MS',cursive,sans-serif;
-    background:#000;color:#0f0;
-    min-height:100vh;display:flex;flex-direction:column;
-    position:relative;overflow-x:hidden;
-}
-body::before{
-    content:'';position:fixed;top:0;left:0;width:100%;height:100%;
-    background:url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUTExMWFh
-    ... (фоновая картинка в base64, сокращена для примера) ...') center/cover no-repeat fixed;
-    filter:brightness(.35);z-index:-2;
-}
-.overlay{
-    position:fixed;top:0;left:0;width:100%;height:100%;
-    background:rgba(0,0,0,.3);z-index:-1;
-}
+        /* === ОСНОВНЫЕ СТИЛИ === */
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: #000;
+            color: #0f0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow-x: hidden;
+        }
 
-/* ──────────────────────────────────────
-   HEADER
-   ────────────────────────────────────── */
-header{
-    background:linear-gradient(to bottom,rgba(0,51,102,.98),rgba(0,0,51,.98));
-    padding:8px;border-bottom:3px solid #00f;
-    position:sticky;top:0;z-index:100;backdrop-filter:blur(6px);
-}
-.nav{
-    display:flex;justify-content:center;align-items:center;
-    flex-wrap:wrap;gap:8px;max-width:1200px;margin:0 auto;padding:0 10px;
-}
-.nav a{
-    width:48px;height:48px;background:#113;border:2px solid #00f;
-    border-radius:8px;overflow:hidden;position:relative;
-    transition:.2s;box-shadow:0 0 8px #0f0;display:flex;
-    align-items:center;justify-content:center;
-}
-.nav a:hover{transform:scale(1.1);box-shadow:0 0 16px #0ff}
-.nav a img{width:70%;height:70%;object-fit:contain}
-.nav a.home{
-    background:#113 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24" fill="%2300f"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>')
-    center/60% no-repeat;
-}
-.search-box{flex:1;max-width:180px}
-.search-box input{
-    width:100%;padding:6px;border:2px solid #00f;
-    background:#113;color:#0ff;border-radius:6px;
-}
-.new-badge{
-    position:absolute;top:-6px;right:-6px;background:#f00;
-    color:#fff;font-size:10px;padding:2px 4px;border-radius:4px;
-    animation:p 2s infinite;
-}
-@keyframes p{50%{transform:scale(1.2)}}
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://img.freepik.com/premium-photo/butterflies-symphony-colors_1170794-83990.jpg?semt=ais_hybrid&w=740&q=80') center/cover no-repeat;
+            background-attachment: fixed;
+            filter: brightness(0.35);
+            z-index: -2;
+        }
 
-/* ──────────────────────────────────────
-   MAIN
-   ────────────────────────────────────── */
-main{flex:1;display:flex;align-items:center;justify-content:center;padding:20px}
-.content{
-    display:flex;flex-direction:column;align-items:center;
-    justify-content:center;width:100%;max-width:1200px;
-}
+        .overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.3);
+            z-index: -1;
+        }
 
-/* ──────────────────────────────────────
-   ЦЕНТРАЛЬНОЕ ОКНО + КАРТИНКА
-   ────────────────────────────────────── */
-.central-image{
-    /* адаптивный размер: от 150 px до 80 vw (может стать больше оригинала) */
-    width:clamp(150px,45vw,80vw);
-    /* квадрат – меняется JS под реальное соотношение */
-    aspect-ratio:1;
-    background:rgba(0,10,30,.9);
-    border:3px solid #00f;
-    border-radius:16px;
-    overflow:hidden;
-    box-shadow:0 0 20px #0ff;
-    display:flex;align-items:center;justify-content:center;
-    margin:0 auto clamp(1.5vw,4vw,3rem) auto;
-    flex-shrink:0;
-}
-.central-image img{
-    /* 100 % контейнера – граница окна точно по краю фото */
-    width:100%;height:100%;object-fit:contain;display:block;
-}
+        /* === HEADER === */
+        header {
+            background: linear-gradient(to bottom, rgba(0,51,102,0.98), rgba(0,0,51,0.98));
+            padding: 8px;
+            border-bottom: 3px solid #00f;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(6px);
+            width: 100%;
+        }
 
-/* ──────────────────────────────────────
-   ТЕКСТ ПОД КАРТИНКОЙ
-   ────────────────────────────────────── */
-.butterfly-text{
-    font-family:Arial,sans-serif;font-weight:bold;
-    font-size:clamp(1.2rem,5vw,2.8rem);
-    text-transform:uppercase;letter-spacing:.15em;
-    color:#00f;text-align:center;margin:0;
-    text-shadow:1px 1px 3px rgba(0,0,0,.3);line-height:1.2;
-}
+        .nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 0 10px;
+        }
 
-/* ──────────────────────────────────────
-   АКТИВНАЯ ССЫЛКА
-   ────────────────────────────────────── */
-.nav a.active{border-color:#0ff!important;box-shadow:0 0 16px #0ff}
-.nav a.active::before,.nav a.active::after{
-    content:'';position:absolute;width:12px;height:3px;background:#0ff;
-    top:50%;transform:translateY(-50%);
-}
-.nav a.active::before{left:-10px}.nav a.active::after{right:-10px}
+        .nav a {
+            width: 48px; height: 48px; background: #113; border: 2px solid #00f;
+            border-radius: 8px; overflow: hidden; position: relative;
+            transition: 0.2s; box-shadow: 0 0 8px #0f0;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .nav a:hover { transform: scale(1.1); box-shadow: 0 0 16px #0ff; }
+        .nav a img { width: 70%; height: 70%; object-fit: contain; }
 
-/* ──────────────────────────────────────
-   АДАПТИВ
-   ────────────────────────────────────── */
-@media(max-width:900px){.content{padding:15px}}
-@media(max-width:600px){
-    .nav a{width:40px;height:40px}
-    .search-box{max-width:120px}
-}
-</style>
+        .nav a.home {
+            background: #113 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300f"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>') center/60% no-repeat;
+        }
+
+        .search-box { flex: 1; max-width: 180px; }
+        .search-box input {
+            width: 100%; padding: 6px; border: 2px solid #00f;
+            background: #113; color: #0ff; border-radius: 6px;
+        }
+
+        .new-badge {
+            position: absolute; top: -6px; right: -6px; background: #f00;
+            color: #fff; font-size: 10px; padding: 2px 4px; border-radius: 4px;
+            animation: p 2s infinite;
+        }
+        @keyframes p { 50% { transform: scale(1.2); } }
+
+        /* === MAIN === */
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* === ЦЕНТРАЛЬНОЕ ОКНО ПОД КАРТИНКУ === */
+        .central-image {
+            width: clamp(150px, 45vw, 500px); /* адаптивно: мин 150px, макс 500px */
+            aspect-ratio: 1;
+            background: rgba(0,10,30,0.9);
+            border: 3px solid #00f;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 0 20px #0ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto clamp(1.5vw, 4vw, 3rem) auto; /* масштабируемый отступ */
+            flex-shrink: 0;
+        }
+
+        .central-image img {
+            width: 88%;
+            height: 88%;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* === ТЕКСТ ПОД КАРТИНКОЙ === */
+        .butterfly-text {
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            font-size: clamp(1.2rem, 5vw, 2.8rem);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #00f;
+            text-align: center;
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+
+        /* === АКТИВНАЯ ССЫЛКА === */
+        .nav a.active {
+            border-color: #0ff !important;
+            box-shadow: 0 0 16px #0ff;
+        }
+        .nav a.active::before,
+        .nav a.active::after {
+            content: '';
+            position: absolute;
+            width: 12px; height: 3px; background: #0ff;
+            top: 50%; transform: translateY(-50%);
+        }
+        .nav a.active::before { left: -10px; }
+        .nav a.active::after { right: -10px; }
+
+        /* === АДАПТИВ === */
+        @media (max-width: 900px) {
+            .content { padding: 15px; }
+        }
+        @media (max-width: 600px) {
+            .nav a { width: 40px; height: 40px; }
+            .search-box { max-width: 120px; }
+        }
+    </style>
 </head>
 <body>
-<div class="overlay"></div>
+    <div class="overlay"></div>
 
-<header>
-    <nav class="nav">
-        <a href="#" class="home" title="Главная"></a>
-        <a href="#" title="Дневные"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." alt=""></a>
-        <a href="#" title="Микро"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." alt=""></a>
-        <a href="#" title="Ночные"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." alt=""></a>
-        <a href="#" title="Гусеницы"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." alt=""></a>
-        <a href="#" title="Жуки"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." alt=""></a>
-        <a href="#" title="Ложногусеницы"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..." alt=""></a>
-        <a href="#" class="info active" title="О сайте"></a>
-        <div class="search-box"><input type="text" placeholder="Поиск..."></div>
-    </nav>
-</header>
+    <header>
+        <nav class="nav">
+            <a href="#" class="home" title="Главная"></a>
+            <a href="#" title="Дневные"><img src="https://png.klev.club/uploads/posts/2024-04/png-klev-club-oyjh-p-belaya-babochka-png-11.png" alt=""></a>
+            <a href="#" title="Микро"><img src="https://png.klev.club/uploads/posts/2024-05/png-klev-club-to2d-p-mol-png-3.png" alt=""></a>
+            <a href="#" title="Ночные"><img src="https://png.pngtree.com/png-clipart/20240811/original/pngtree-bagworm-moths-stealthy-cocoon-weaver-on-png-image_15750283.png" alt=""></a>
+            <a href="#" title="Гусеницы"><img src="https://png.pngtree.com/png-clipart/20250507/original/pngtree-bright-green-caterpillar-with-detailed-body-segments-and-tiny-legs-png-image_20943875.png" alt=""></a>
+            <a href="#" title="Жуки"><img src="https://www.koppert.ru/content/_processed_/f/7/csm_Vine_weevil_Otiorhynchus_sulcatus_Adult_Koppert_4b9004cb49.png" alt=""></a>
+            <a href="#" title="Ложногусеницы"><img src="https://ltdfoto.ru/images/2025/11/12/e9a6ceae-4f5b-4476-ad9e-83ddc84fba16-1.png" alt=""></a>
+            <a href="#" class="info active" title="О сайте"></a>
+            <div class="search-box"><input type="text" placeholder="Поиск..."></div>
+        </nav>
+    </header>
 
-<main>
-    <div class="content">
-        <div class="central-image">
-            <!-- ОСНОВНАЯ КАРТИНКА (base64) -->
-            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUTExMWFh
-            ... (полный base64 оригинального erxlebella.jpg) ..." alt="Roeslerstammia erxlebella">
+    <main>
+        <div class="content">
+            <div class="central-image">
+                <!-- ОСНОВНАЯ КАРТИНКА (встроена через URL, работает без base64) -->
+                <img src="https://insectamo.ru/images/micro/roes/erxlebella.jpg" alt="Roeslerstammia erxlebella">
+            </div>
+            <div class="butterfly-text">Roeslerstammia erxlebella</div>
         </div>
-        <div class="butterfly-text">Roeslerstammia erxlebella</div>
-    </div>
-</main>
+    </main>
 
-<script>
-/* ── Подсветка активной ссылки ── */
-const cur = location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.nav a').forEach(a=>a.classList.remove('active'));
-const act = document.querySelector(`.nav a[href="${cur}"]`);
-if(act) act.classList.add('active');
+    <script>
+        // Подсветка активной ссылки
+        const current = location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+        const activeLink = document.querySelector(`.nav a[href="${current}"]`);
+        if (activeLink) activeLink.classList.add('active');
 
-/* ── Адаптивный размер окна под реальное изображение ── */
-const img = document.querySelector('.central-image img');
-const box = document.querySelector('.central-image');
+        // === АВТОМАТИЧЕСКАЯ ПОДГОНКА ПОД РАЗМЕР КАРТИНКИ ===
+        const img = document.querySelector('.central-image img');
+        const container = document.querySelector('.central-image');
 
-function adapt(){
-    if(!img.naturalWidth) return;
-    const w = img.naturalWidth, h = img.naturalHeight;
-    const max = Math.max(w, h);               // оригинальный максимум
-    const clampMax = Math.max(max, 1200);     // позволяем расти больше оригинала
-    box.style.width = `clamp(150px,45vw,${clampMax}px)`;
-    box.style.aspectRatio = `${w}/${h}`;
-}
-img.onload = adapt;
-if(img.complete) adapt();
-</script>
+        img.onload = function() {
+            if (!img.naturalWidth) return;
+
+            const realW = img.naturalWidth;
+            const realH = img.naturalHeight;
+            const maxSize = Math.min(realW, realH, 600); // лимит 600px
+
+            // Устанавливаем адаптивный clamp
+            container.style.width = `clamp(150px, 45vw, ${maxSize}px)`;
+            container.style.aspectRatio = `${realW} / ${realH}`;
+        };
+
+        // Если картинка уже загрузилась
+        if (img.complete && img.naturalWidth) {
+            img.onload();
+        }
+    </script>
 </body>
 </html>
