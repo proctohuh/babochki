@@ -5,6 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>О сайте</title>
     <link rel="stylesheet" href="style2.css">
+    <style>
+        /* === ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ СТРАНИЦЫ "О САЙТЕ" === */
+        .about-wrapper {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 8px; /* Учитываем высоту sticky header */
+            pointer-events: none; /* Чтобы не мешать кликам по навигации */
+        }
+        .about-wrapper > * {
+            pointer-events: auto;
+        }
+
+        .about-title {
+            margin-top: calc(30% - 60px); /* 30% от верха экрана с учётом header */
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: clamp(1.8rem, 5vw, 3.2rem);
+            font-weight: bold;
+            color: #00f;
+            text-shadow: 
+                0 0 8px #0ff,
+                0 0 16px #0ff,
+                0 0 24px #00f;
+            text-align: center;
+            animation: glow 2s ease-in-out infinite alternate;
+            letter-spacing: 1px;
+        }
+
+        .about-subtitle {
+            margin-top: calc(30% - 60px); /* 60% от верха экрана */
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-size: clamp(1.2rem, 3.5vw, 2rem);
+            color: #0ff;
+            text-shadow: 0 0 10px #0ff;
+            text-align: center;
+            animation: glow 2.5s ease-in-out infinite alternate-reverse;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 8px #0ff, 0 0 16px #0ff, 0 0 24px #00f; }
+            to { text-shadow: 0 0 12px #0ff, 0 0 24px #0ff, 0 0 36px #00f; }
+        }
+
+        /* Переопределяем main и .content, чтобы они не мешали */
+        main, .content {
+            position: relative;
+            flex: 1;
+            padding: 0;
+            margin: 0;
+            height: 100%;
+        }
+
+        .content > *:not(.about-wrapper) {
+            display: none; /* Скрываем центральный контент на этой странице */
+        }
+
+        /* Адаптивность уже обеспечена через clamp() и % */
+    </style>
 </head>
 <body>
     <div class="overlay"></div>
@@ -25,20 +86,24 @@
 
     <main>
         <div class="content">
+            <div class="about-wrapper">
+                <h1 class="about-title">О сайте</h1>
+                <p class="about-subtitle">сайт был сделан Васей из 5г.</p>
+            </div>
 
-
+            <!-- Остальной контент (если был) скрыт через CSS -->
             
             <!-- Модальное окно поиска -->
-<div id="search-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; overflow-y:auto;">
-    <div style="max-width:800px; margin:40px auto; padding:20px; background:#113; border:2px solid #00f; border-radius:12px; color:#0f0;">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
-            <h2 style="margin:0; color:#0ff; text-shadow:0 0 8px #0ff;">Результаты поиска</h2>
-            <button onclick="closeSearch()" style="background:#f00; color:#fff; border:none; padding:8px 12px; border-radius:6px; cursor:pointer;">✕</button>
-        </div>
-        <div id="search-results"></div>
-        <p id="no-results" style="display:none; text-align:center; color:#aaa; margin-top:20px;">Ничего не найдено.</p>
-    </div>
-</div>
+            <div id="search-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; overflow-y:auto;">
+                <div style="max-width:800px; margin:40px auto; padding:20px; background:#113; border:2px solid #00f; border-radius:12px; color:#0f0;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+                        <h2 style="margin:0; color:#0ff; text-shadow:0 0 8px #0ff;">Результаты поиска</h2>
+                        <button onclick="closeSearch()" style="background:#f00; color:#fff; border:none; padding:8px 12px; border-radius:6px; cursor:pointer;">✕</button>
+                    </div>
+                    <div id="search-results"></div>
+                    <p id="no-results" style="display:none; text-align:center; color:#aaa; margin-top:20px;">Ничего не найдено.</p>
+                </div>
+            </div>
         </div>
     </main>
 
