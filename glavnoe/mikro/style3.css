@@ -58,7 +58,7 @@
         
         /* Остальные стили без изменений... */
         .nav a {
-            width: 480px; height: 480px; background: #113; border: 2px solid #00f; border-radius: 8px;
+            width: 48px; height: 48px; background: #113; border: 2px solid #00f; border-radius: 8px;
             overflow: hidden; position: relative; transition: 0.2s; box-shadow: 0 0 8px #0f0;
         }
         .nav a:hover { transform: scale(1.1); box-shadow: 0 0 16px #0ff; }
