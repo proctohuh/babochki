@@ -104,7 +104,7 @@
         /* === ЦЕНТРАЛЬНОЕ ОКНО С СИНИМИ ГРАНИЦАМИ === */
         .central-image {
             position: relative;
-            width: clamp(100px, 50vw, 100px); /* от 200 до 600px, адаптивно */
+            width: clamp(200px, 50vw, 600px); /* от 200 до 600px, адаптивно */
             background: rgba(0,10,30,0.9);
             border-radius: 16px;
             overflow: hidden;
@@ -152,20 +152,7 @@
             line-height: 1.2;
         }
 
-        /* === АКТИВНАЯ ССЫЛКА === */
-        .nav a.active {
-            border-color: #0ff !important;
-            box-shadow: 0 0 16px #0ff;
-        }
-        .nav a.active::before,
-        .nav a.active::after {
-            content: '';
-            position: absolute;
-            width: 12px; height: 3px; background: #0ff;
-            top: 50%; transform: translateY(-50%);
-        }
-        .nav a.active::before { left: -10px; }
-        .nav a.active::after { right: -10px; }
+
 
         /* === АДАПТИВ === */
         @media (max-width: 900px) {
