@@ -104,7 +104,7 @@
         /* === ЦЕНТРАЛЬНОЕ ОКНО С СИНИМИ ГРАНИЦАМИ === */
         .central-image {
             position: relative;
-            width: clamp(200px, 50vw, 600px); /* от 200 до 600px, адаптивно */
+            width: clamp(200px, 50vw, 300px); /* от 200 до 600px, адаптивно */
             background: rgba(0,10,30,0.9);
             border-radius: 16px;
             overflow: hidden;
