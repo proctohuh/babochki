@@ -98,7 +98,7 @@
             justify-content: center;
             gap: 0;
             width: 100%;
-            max-width: 200px;
+            max-width: 1200px;
         }
 
         /* === ЦЕНТРАЛЬНОЕ ОКНО С СИНИМИ ГРАНИЦАМИ === */
@@ -155,10 +155,10 @@
 
 
         /* === АДАПТИВ === */
-        @media (max-width: 500px) {
+        @media (max-width: 900px) {
             .content { padding: 15px; }
         }
-        @media (max-width: 500px) {
+        @media (max-width: 600px) {
             .nav a { width: 40px; height: 40px; }
             .search-box { max-width: 120px; }
         }
