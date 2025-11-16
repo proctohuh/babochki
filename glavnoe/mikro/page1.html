@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roeslerstammia 2 erxlebella</title>
+    <title>Roeslerstammia  erxlebella</title>
     <link rel="stylesheet" href="but.css">
 </head>
 <body>
@@ -33,7 +33,7 @@
         </div>
     </main>
 
-   <script>
+    <script>
         // === ДИНАМИЧЕСКАЯ ПОДГОНКА РАЗМЕРА КАРТИНКИ ПОД ЭКРАН ===
         const img = document.querySelector('.central-image img');
         const container = document.querySelector('.central-image');
@@ -47,7 +47,7 @@
 
             // Максимальный размер: 600px, минимальный: 200px
             const maxSize = 100;
-            const minSize = 330;
+            const minSize = 400;
 
             // Вычисляем целевой размер по ширине экрана
             let targetSize = window.innerWidth * 0.5; // 50vw
@@ -58,8 +58,8 @@
             const containerHeight = containerWidth / aspect;
 
             // Устанавливаем размеры контейнера
-            container.style.width = ${containerWidth}px;
-            container.style.height = ${containerHeight}px;
+            container.style.width = `${containerWidth}px`;
+            container.style.height = `${containerHeight}px`;
 
             // Принудительно обновляем aspect-ratio через style (на случай, если clamp не сработает)
             container.style.aspectRatio = 'auto';
