@@ -139,7 +139,7 @@
 
         /* === ТЕКСТ ПОД КАРТИНКОЙ === */
         .butterfly-text {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Arial', sans-serif; 
             font-weight: bold;
             font-size: clamp(1.2rem, 5vw, 2.8rem);
             text-transform: uppercase;
