@@ -253,12 +253,6 @@
         if (img.complete && img.naturalWidth) {
             updateImageSize();
         }
-
-        // Подсветка активной ссылки
-        const current = location.pathname.split('/').pop() || 'index.html';
-        document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
-        const activeLink = document.querySelector(`.nav a[href="${current}"]`);
-        if (activeLink) activeLink.classList.add('active');
     </script>
 </body>
 </html>
