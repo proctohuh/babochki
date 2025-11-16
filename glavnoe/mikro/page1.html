@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roeslerstammia  erxlebella</title>
+    <title>Roeslerstammia 2 erxlebella</title>
     <link rel="stylesheet" href="style3.css">
 </head>
 <body>
@@ -33,48 +33,50 @@
         </div>
     </main>
 
-    <script>
-        // === ДИНАМИЧЕСКАЯ ПОДГОНКА РАЗМЕРА КАРТИНКИ ПОД ЭКРАН ===
-        const img = document.querySelector('.central-image img');
+<script>
+    // === АДАПТИВНОЕ МАСШТАБИРОВАНИЕ ТОЛЬКО ЦЕНТРАЛЬНОГО ИЗОБРАЖЕНИЯ ===
+    document.addEventListener('DOMContentLoaded', function () {
+        const centralImg = document.querySelector('.central-image img');
         const container = document.querySelector('.central-image');
 
-        function updateImageSize() {
-            if (!img.naturalWidth || !img.naturalHeight) return;
+        if (!centralImg || !container) return;
 
-            const imgW = img.naturalWidth;
-            const imgH = img.naturalHeight;
+        function updateCentralImageSize() {
+            // Ждём, пока изображение загрузится и будут доступны naturalWidth/Height
+            if (!centralImg.naturalWidth || !centralImg.naturalHeight) return;
+
+            const imgW = centralImg.naturalWidth;
+            const imgH = centralImg.naturalHeight;
             const aspect = imgW / imgH;
 
-            // Максимальный размер: 600px, минимальный: 200px
-            const maxSize = 100;
-            const minSize = 400;
+            // Максимальный и минимальный размер изображения (в px)
+            const maxSize = 600;
+            const minSize = 200;
 
-            // Вычисляем целевой размер по ширине экрана
-            let targetSize = window.innerWidth * 0.5; // 50vw
-            targetSize = Math.max(minSize, Math.min(targetSize, maxSize));
+            // Целевой размер: 50% от ширины экрана, но в пределах min-max
+            let targetWidth = window.innerWidth * 0.5;
+            targetWidth = Math.max(minSize, Math.min(targetWidth, maxSize));
 
-            // Учитываем соотношение сторон
-            const containerWidth = targetSize;
-            const containerHeight = containerWidth / aspect;
+            const targetHeight = targetWidth / aspect;
 
-            // Устанавливаем размеры контейнера
-            container.style.width = `${containerWidth}px`;
-            container.style.height = `${containerHeight}px`;
-
-            // Принудительно обновляем aspect-ratio через style (на случай, если clamp не сработает)
-            container.style.aspectRatio = 'auto';
+            // Применяем размеры ТОЛЬКО к контейнеру центрального изображения
+            container.style.width = ${targetWidth}px;
+            container.style.height = ${targetHeight}px;
+            container.style.maxWidth = '100%'; // Чтобы не вылезало за экран на мобильных
+            container.style.margin = '0 auto'; // Центрирование
         }
 
         // Запуск при загрузке изображения
-        img.onload = updateImageSize;
+        centralImg.addEventListener('load', updateCentralImageSize);
 
         // Запуск при изменении размера окна
-        window.addEventListener('resize', updateImageSize);
+        window.addEventListener('resize', updateCentralImageSize);
 
-        // Если изображение уже загружено (кэш)
-        if (img.complete && img.naturalWidth) {
-            updateImageSize();
+        // Если изображение уже в кэше — запускаем сразу
+        if (centralImg.complete && centralImg.naturalWidth > 0) {
+            updateCentralImageSize();
         }
-    </script>
+    });
+</script>
 </body>
 </html>
