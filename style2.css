@@ -74,10 +74,7 @@ header {
 .nav a.home { 
     background: #113 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300f"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>') center/60% no-repeat; 
 }
-.nav a.info { 
-    background: #113 url('https://cdn-icons-png.flaticon.com/512/69/69544.png') center/70% no-repeat; 
-    background-size: 70%; 
-}
+
 
 .search-box { flex: 1; max-width: 180px; }
 .search-box input { 
