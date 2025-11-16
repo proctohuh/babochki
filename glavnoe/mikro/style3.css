@@ -55,18 +55,21 @@
             max-width: 1200px;
             padding: 0 10px;
         }
-
+        
+        /* Остальные стили без изменений... */
         .nav a {
-            width: 48px; height: 48px; background: #113; border: 2px solid #00f;
-            border-radius: 8px; overflow: hidden; position: relative;
-            transition: 0.2s; box-shadow: 0 0 8px #0f0;
-            display: flex; align-items: center; justify-content: center;
+            width: 48px; height: 48px; background: #113; border: 2px solid #00f; border-radius: 8px;
+            overflow: hidden; position: relative; transition: 0.2s; box-shadow: 0 0 8px #0f0;
         }
         .nav a:hover { transform: scale(1.1); box-shadow: 0 0 16px #0ff; }
-        .nav a img { width: 100%; height: 100%; object-fit: contain; }
-
-        .nav a.home {
-            background: #113 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300f"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>') center/60% no-repeat;
+        .nav a img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .nav a.home { 
+            background: #113 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300f"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>') center/60% no-repeat; 
+        }
+        .nav a.info { 
+            background: #113 url('https://cdn-icons-png.flaticon.com/512/69/69544.png') center/70% no-repeat; 
+            background-size: 70%; 
         }
 
         .search-box { flex: 1; max-width: 180px; }
