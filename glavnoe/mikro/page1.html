@@ -33,48 +33,6 @@
         </div>
     </main>
 
-    <script>
-        // === ДИНАМИЧЕСКАЯ ПОДГОНКА РАЗМЕРА КАРТИНКИ ПОД ЭКРАН ===
-        const img = document.querySelector('.central-image img');
-        const container = document.querySelector('.central-image');
 
-        function updateImageSize() {
-            if (!img.naturalWidth || !img.naturalHeight) return;
-
-            const imgW = img.naturalWidth;
-            const imgH = img.naturalHeight;
-            const aspect = imgW / imgH;
-
-            // Максимальный размер: 600px, минимальный: 200px
-            const maxSize = 100;
-            const minSize = 400;
-
-            // Вычисляем целевой размер по ширине экрана
-            let targetSize = window.innerWidth * 0.5; // 50vw
-            targetSize = Math.max(minSize, Math.min(targetSize, maxSize));
-
-            // Учитываем соотношение сторон
-            const containerWidth = targetSize;
-            const containerHeight = containerWidth / aspect;
-
-            // Устанавливаем размеры контейнера
-            container.style.width = `${containerWidth}px`;
-            container.style.height = `${containerHeight}px`;
-
-            // Принудительно обновляем aspect-ratio через style (на случай, если clamp не сработает)
-            container.style.aspectRatio = 'auto';
-        }
-
-        // Запуск при загрузке изображения
-        img.onload = updateImageSize;
-
-        // Запуск при изменении размера окна
-        window.addEventListener('resize', updateImageSize);
-
-        // Если изображение уже загружено (кэш)
-        if (img.complete && img.naturalWidth) {
-            updateImageSize();
-        }
-    </script>
 </body>
 </html>
