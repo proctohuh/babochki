@@ -67,28 +67,24 @@ main {
     max-width: 420px;
 }
 
-/* === КАРТИНКА БЕЗ ЧЁРНЫХ ОТСТУПОВ — РАМКА ВПЛОТНУЮ К ФОТО === */
+/* Картинка с синей рамкой */
 .central-image {
     position: relative;
     background: rgba(0,10,30,0.9);
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 0 20px #0ff;
+    padding: 4px;
     width: 100%;
-    aspect-ratio: 1 / 1;           /* или убираешь, если хочешь по пропорциям фото */
-    padding: 0;                    /* УБИРАЕМ ВСЯКИЙ padding! */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    aspect-ratio: 1 / 1;        /* квадрат, если хочешь — убери и будет по пропорциям фото */
 }
 
-/* Синяя рамка теперь рисуется ВНУТРИ контейнера, вплотную к фото */
 .central-image::before {
     content: '';
     position: absolute;
-    top: 6px; left: 6px; right: 6px; bottom: 6px;   /* отступ от края = толщина рамки */
+    inset: 0;
     border: 3px solid #00f;
-    border-radius: 13px;           /* чуть меньше, чем у контейнера */
+    border-radius: 16px;
     pointer-events: none;
     z-index: 1;
 }
@@ -98,8 +94,8 @@ main {
     height: 100%;
     object-fit: contain;
     display: block;
-    border-radius: 16px;           /* чтобы углы фото не вылезали за рамку */
 }
+
 /* Подпись под картинкой */
 .butterfly-text {
     margin-top: 20px;
