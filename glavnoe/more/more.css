@@ -71,9 +71,9 @@ main {
 .central-image {
     position: relative;
     background: rgba(0,10,30,0.9);
-    border-radius: 16px;
+    border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 0 20px #0ff;
+    box-shadow: 0 0 0px #0ff;
     padding: 4px;
     width: 100%;
     aspect-ratio: 1 / 1;        /* квадрат, если хочешь — убери и будет по пропорциям фото */
@@ -83,8 +83,8 @@ main {
     content: '';
     position: absolute;
     inset: 0;
-    border: 3px solid #00f;
-    border-radius: 16px;
+    border: 1px solid #00f;
+    border-radius: 1px;
     pointer-events: none;
     z-index: 1;
 }
