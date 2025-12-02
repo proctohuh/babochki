@@ -67,7 +67,7 @@ main {
     max-width: 420px;
 }
 
-        /* === ЦЕНТРАЛЬНОЕ ОКНО С СИНИМИ ГРАНИЦАМИ === */
+/* Картинка с синей рамкой */
 .central-image {
     position: relative;
     background: rgba(0,10,30,0.9);
@@ -75,18 +75,10 @@ main {
     overflow: hidden;
     box-shadow: 0 0 20px #0ff;
     padding: 4px;
-    box-sizing: border-box;
-    
-    /* Главное: 20% от ширины окна, но не больше 600px и не меньше 280px */
-    width: clamp(280px, 25vw, 1000px);
-    
-    /* Автоматически подстраиваем высоту под соотношение сторон фото */
-    aspect-ratio: auto;
-    
-    margin: 40px auto; /* равномерный отступ сверху и снизу + центрирование по горизонтали */
+    width: 100%;
+    aspect-ratio: 1 / 1;        /* квадрат, если хочешь — убери и будет по пропорциям фото */
 }
 
-/* Синяя рамка */
 .central-image::before {
     content: '';
     position: absolute;
