@@ -74,7 +74,7 @@ main {
     border-radius: 6px;
     overflow: hidden;
     box-shadow: 0 0 0px #0ff;
-    padding: 4px;
+    padding: 1px;
     width: 100%;
     aspect-ratio: 1 / 1;        /* квадрат, если хочешь — убери и будет по пропорциям фото */
 }
