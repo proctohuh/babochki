@@ -67,9 +67,27 @@ main {
     max-width: 420px;
 }
 
+/* Картинка с синей рамкой */
+.central-image {
+    position: relative;
+    background: rgba(0,10,30,0.9);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 0 0px #0ff;
+    padding: 4px;
+    width: 100%;
+    aspect-ratio: 1 / 1;        /* квадрат, если хочешь — убери и будет по пропорциям фото */
+}
 
-
-
+.central-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 3px solid #00f;
+    border-radius: 16px;
+    pointer-events: none;
+    z-index: 1;
+}
 
 .central-image img {
     width: 100%;
@@ -77,6 +95,11 @@ main {
     object-fit: contain;
     display: block;
 }
+
+
+
+
+
 
 /* Подпись под картинкой */
 .butterfly-text {
