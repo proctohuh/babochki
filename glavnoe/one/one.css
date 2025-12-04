@@ -100,15 +100,33 @@
             width: 100%;
             max-width: 1200px;
         }
+/* === МОБИЛЬНАЯ ВЕРСТКА — ВЕРТИКАЛЬНАЯ КОЛОНКА === */
 @media (max-width: 768px) {
     main {
-        display: block; /* полностью ломаем flex и делаем обычный поток */
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* чтобы начиналось сверху */
+        padding: 20px 10px;
     }
-    
+
+    /* Убираем большие отступы между блоками на мобилке */
     .content {
-        margin: 30px auto; /* красивые отступы между блоками */
+        margin: 20px 0; /* вместо 40px auto */
+        width: 90vw;    /* чуть шире на мобилке, чтобы лучше смотрелось */
+        max-width: 400px;
+    }
+
+    /* Немного уменьшаем картинку на совсем маленьких экранах */
+    .central-image {
+        width: clamp(260px, 85vw, 380px);
+    }
+
+    .butterfly-text {
+        font-size: clamp(1rem, 6vw, 2rem);
     }
 }
+
+/* Если хочешь, чтобы даже на планшетах (до 1024px) было вертикально — можно расширить до 1024px */
         /* === ЦЕНТРАЛЬНОЕ ОКНО С СИНИМИ ГРАНИЦАМИ === */
 .central-image {
     position: relative;
