@@ -100,7 +100,15 @@
             width: 100%;
             max-width: 1200px;
         }
-
+@media (max-width: 768px) {
+    main {
+        display: block; /* полностью ломаем flex и делаем обычный поток */
+    }
+    
+    .content {
+        margin: 30px auto; /* красивые отступы между блоками */
+    }
+}
         /* === ЦЕНТРАЛЬНОЕ ОКНО С СИНИМИ ГРАНИЦАМИ === */
 .central-image {
     position: relative;
