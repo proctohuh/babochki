@@ -67,16 +67,23 @@ main {
     max-width: 420px;
 }
 
-/* Картинка с синей рамкой */
+        /* === ЦЕНТРАЛЬНОЕ ОКНО С СИНИМИ ГРАНИЦАМИ === */
 .central-image {
     position: relative;
     background: rgba(0,10,30,0.9);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 0 0px #0ff;
+    box-shadow: 0 0 20px #0ff;
     padding: 4px;
-    width: 100%;
-    aspect-ratio: 1 / 1;        /* квадрат, если хочешь — убери и будет по пропорциям фото */
+    box-sizing: border-box;
+    
+    /* Главное: 20% от ширины окна, но не больше 600px и не меньше 280px */
+    width: clamp(280px, 25vw, 1000px);
+    
+    /* Автоматически подстраиваем высоту под соотношение сторон фото */
+    aspect-ratio: auto;
+    
+    margin: 40px auto; /* равномерный отступ сверху и снизу + центрирование по горизонтали */
 }
 
 .central-image::before {
