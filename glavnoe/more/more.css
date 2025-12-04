@@ -69,15 +69,7 @@ main {
 
 
 
-.central-image::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border: 1px solid #00f;
-    border-radius: 1px;
-    pointer-events: none;
-    z-index: 1;
-}
+
 
 .central-image img {
     width: 100%;
