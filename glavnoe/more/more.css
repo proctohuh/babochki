@@ -78,7 +78,7 @@ main {
     box-sizing: border-box;
     
     /* Главное: 20% от ширины окна, но не больше 600px и не меньше 280px */
-    width: clamp(280px, 25vw, 1000px);
+    width: clamp(280px, 55vw, 1000px);
     
     /* Автоматически подстраиваем высоту под соотношение сторон фото */
     aspect-ratio: auto;
