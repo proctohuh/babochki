@@ -1,0 +1,199 @@
+[
+    {
+        "name": "Бражник винный",
+        "url": "dnevnie/brazhnik-vinnyy.html"
+    },
+    {
+        "name": "Капустница",
+        "url": "dnevnie/kapustnica.html"
+    },
+    {
+        "name": "Павлиний глаз",
+        "url": "dnevnie/pavlinij-glaz.html"
+    },
+    {
+        "name": "Адмирал",
+        "url": "dnevnie/admiral.html"
+    },
+    {
+        "name": "Махаон",
+        "url": "dnevnie/mahagon.html"
+    },
+    {
+        "name": "Зорька",
+        "url": "dnevnie/zorka.html"
+    },
+    {
+        "name": "Перламутровка",
+        "url": "dnevnie/perlamutrovka.html"
+    },
+    {
+        "name": "Голубянка икар",
+        "url": "dnevnie/golubyanka-ikar.html"
+    },
+
+    {
+        "name": "Моль платяная",
+        "url": "mikro/mol-platyanaya.html"
+    },
+    {
+        "name": "Огнёвка капустная",
+        "url": "mikro/ognevka-kapustnaya.html"
+    },
+    {
+        "name": "Моль яблоневая",
+        "url": "mikro/mol-yablonevaya.html"
+    },
+    {
+        "name": "Стеклянница",
+        "url": "mikro/steklyannica.html"
+    },
+    {
+        "name": "Моль зерновая",
+        "url": "mikro/mol-zernovaya.html"
+    },
+    {
+        "name": "Моль восковая",
+        "url": "mikro/mol-voskovaya.html"
+    },
+    {
+        "name": "Листовёртка",
+        "url": "mikro/listovertka.html"
+    },
+    {
+        "name": "Моль огнёвка",
+        "url": "mikro/mol-ognevka.html"
+    },
+
+    {
+        "name": "Медведица кая",
+        "url": "nochnye/medvedica-kaya.html"
+    },
+    {
+        "name": "Совка гамма",
+        "url": "nochnye/sovka-gamma.html"
+    },
+    {
+        "name": "Ленточница",
+        "url": "nochnye/lentochnica.html"
+    },
+    {
+        "name": "Бражник глазчатый",
+        "url": "nochnye/brazhnik-glazchatyy.html"
+    },
+    {
+        "name": "Пяденица",
+        "url": "nochnye/pyadenica.html"
+    },
+    {
+        "name": "Волнянка",
+        "url": "nochnye/volnyanka.html"
+    },
+    {
+        "name": "Шелкопряд",
+        "url": "nochnye/shelkopryad.html"
+    },
+    {
+        "name": "Совка озимая",
+        "url": "nochnye/sovka-ozimaya.html"
+    },
+
+    {
+        "name": "Гусеница махаона",
+        "url": "gusenicy/gusenica-mahaona.html"
+    },
+    {
+        "name": "Гусеница капустницы",
+        "url": "gusenicy/gusenica-kapustnicy.html"
+    },
+    {
+        "name": "Гусеница павлиньего глаза",
+        "url": "gusenicy/gusenica-pavliniego-glaza.html"
+    },
+    {
+        "name": "Гусеница бражника",
+        "url": "gusenicy/gusenica-brazhnika.html"
+    },
+    {
+        "name": "Гусеница медведицы",
+        "url": "gusenicy/gusenica-medvedicy.html"
+    },
+    {
+        "name": "Гусеница совки",
+        "url": "gusenicy/gusenica-sovki.html"
+    },
+    {
+        "name": "Гусеница шелкопряда",
+        "url": "gusenicy/gusenica-shelkopryada.html"
+    },
+    {
+        "name": "Гусеница пяденицы",
+        "url": "gusenicy/gusenica-pyadenicy.html"
+    },
+
+    {
+        "name": "Жук-олень",
+        "url": "juki/zhuk-olen.html"
+    },
+    {
+        "name": "Майский жук",
+        "url": "juki/mayskiy-zhuk.html"
+    },
+    {
+        "name": "Божья коровка",
+        "url": "juki/bozhya-korovka.html"
+    },
+    {
+        "name": "Колорадский жук",
+        "url": "juki/koloradskiy-zhuk.html"
+    },
+    {
+        "name": "Жук-носорог",
+        "url": "juki/zhuk-nosorog.html"
+    },
+    {
+        "name": "Светлячок",
+        "url": "juki/svetlyachok.html"
+    },
+    {
+        "name": "Жук-короед",
+        "url": "juki/zhuk-koroed.html"
+    },
+    {
+        "name": "Жук-плавунец",
+        "url": "juki/zhuk-plavunec.html"
+    },
+
+    {
+        "name": "Ложногусеница розанная",
+        "url": "lojnogusenicy/lozhnogusenica-rozannaya.html"
+    },
+    {
+        "name": "Ложногусеница сосновая",
+        "url": "lojnogusenicy/lozhnogusenica-sosnovaya.html"
+    },
+    {
+        "name": "Пилильщик яблонный",
+        "url": "lojnogusenicy/pililshchik-yablonnyy.html"
+    },
+    {
+        "name": "Пилильщик вишнёвый",
+        "url": "lojnogusenicy/pililshchik-vishnevyi.html"
+    },
+    {
+        "name": "Ложногусеница смородинная",
+        "url": "lojnogusenicy/lozhnogusenica-smorodinnaya.html"
+    },
+    {
+        "name": "Пилильщик хвойный",
+        "url": "lojnogusenicy/pililshchik-hvoynyy.html"
+    },
+    {
+        "name": "Ложногусеница крыжовниковая",
+        "url": "lojnogusenicy/lozhnogusenica-kryzhovnikovaya.html"
+    },
+    {
+        "name": "Пилильщик берёзовый",
+        "url": "lojnogusenicy/pililshchik-berezovyy.html"
+    }
+]
