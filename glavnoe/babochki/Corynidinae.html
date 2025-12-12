@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corynidinae</title>
+    <link rel="stylesheet" href="babochki.css">
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <header>
+        <nav class="nav">
+            <a href="../../index.html" class="home active" title="Главная"></a>
+            <a href="../../dnevnie.html" title="Дневные"><img src="https://png.klev.club/uploads/posts/2024-04/png-klev-club-oyjh-p-belaya-babochka-png-11.png" alt=""></a>
+            <a href="../../mikro.html" title="Микро"><img src="https://png.klev.club/uploads/posts/2024-05/png-klev-club-to2d-p-mol-png-3.png" alt=""></a>
+            <a href="../../nochnye.html" title="Ночные"><img src="https://png.pngtree.com/png-clipart/20240811/original/pngtree-bagworm-moths-stealthy-cocoon-weaver-on-png-image_15750283.png" alt=""></a>
+            <a href="../../gusenicy.html" title="Гусеницы"><img src="https://png.pngtree.com/png-clipart/20250507/original/pngtree-bright-green-caterpillar-with-detailed-body-segments-and-tiny-legs-png-image_20943875.png" alt=""></a>
+            <a href="../../juki.html" title="Жуки"><img src="https://www.koppert.ru/content/_processed_/f/7/csm_Vine_weevil_Otiorhynchus_sulcatus_Adult_Koppert_4b9004cb49.png" alt=""></a>
+            <a href="../../lojnogusenicy.html" title="Ложногусеницы"><img src="https://ltdfoto.ru/images/2025/11/12/e9a6ceae-4f5b-4476-ad9e-83ddc84fba16-1.png" alt=""></a>
+            <a href="../../about.html" class="info" title="О сайте"><img src="https://cdn-icons-png.flaticon.com/512/3356/3356179.png" alt=""></a>
+            <div class="search-box"><input type="text" placeholder="Поиск..."></div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="central-image">
+                <!-- ОСНОВНАЯ КАРТИНКА -->
+                <img src="https://insectamo.ru/images/sawfly/cimb/crassicornis.jpg" alt="Roeslerstammia erxlebella">
+            </div>
+            <div class="butterfly-text">Corynis crassicornis</div>
+        </div>
+             <div class="content">
+            <div class="central-image">
+                <!-- ОСНОВНАЯ КАРТИНКА -->
+                <img src="https://insectamo.ru/images/sawfly/cimb/obscura.jpg" alt="Roeslerstammia erxlebella">
+            </div>
+            <div class="butterfly-text">Corynis obscura</div>
+        </div>
+             <div class="content">
+            <div class="central-image">
+                <!-- ОСНОВНАЯ КАРТИНКА -->
+                <img src="https://insectamo.ru/images/sawfly/cimb/obscura1.jpg" alt="Roeslerstammia erxlebella">
+            </div>
+            <div class="butterfly-text">Corynis obscuras</div>
+        </div>
+    </main>
+<div id="search-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:1000; overflow-y:auto;">
+    <div style="max-width:800px; margin:40px auto; padding:20px; background:#113; border:2px solid #00f; border-radius:12px; color:#0f0;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+            <h2 style="margin:0; color:#0ff; text-shadow:0 0 8px #0ff;">Результаты поиска</h2>
+            <button onclick="closeSearch()" style="background:#f00; color:#fff; border:none; padding:8px 12px; border-radius:6px; cursor:pointer;">✕</button>
+        </div>
+        <div id="search-results"></div>
+        <p id="no-results" style="display:none; text-align:center; color:#aaa; margin-top:20px;">Ничего не найдено.</p>
+    </div>
+</div>
+        </div>
+    </main>
+
+    <script>
+        const current = location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+        const activeLink = document.querySelector(`.nav a[href="${current}"]`);
+        if (activeLink) activeLink.classList.add('active');
+    </script>
+    <script src="search.js"></script>
+</body>
+</html>
