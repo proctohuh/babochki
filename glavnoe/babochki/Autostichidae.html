@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="babochki.css">
 </head>
 <body>
-    <div class="overlay"></div>
+    <div class="overlay"></div> 
 
     <header>
         <nav class="nav">
@@ -33,7 +33,7 @@
         </div>
     </main>
     <script>
-        // Подсветка активной страницы
+        // Подсветка активной страницы 
         const current = location.pathname.split('/').pop() || 'index.html';
         document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
         const activeLink = document.querySelector(`.nav a[href="${current}"]`);
@@ -52,6 +52,6 @@
 </div>
 
 <script src="search.js"></script>
-// просто коммент
+<!-- комментарий -->
 </body>
 </html>
