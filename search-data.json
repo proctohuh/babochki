@@ -1,199 +1,203 @@
 [
     {
-        "name": "Бражник винный",
-        "url": "dnevnie/brazhnik-vinnyy.html"
+        "name": "Abia candens",
+        "url": "glavnoe/babochki/Abiinae.html"
     },
     {
-        "name": "жук",
-        "url": "glavnoe/babochki/Roeslerstammiidae.html"
+        "name": "Arge berberidis",
+        "url": "glavnoe/babochki/Arginae.html"
     },
     {
-        "name": "Павлиний глаз",
-        "url": "glavnoe/babochki/Gyrinidae.html"
+        "name": "Oegoconia deauratella",
+        "url": "glavnoe/babochki/Autostichidae.html"
     },
     {
-        "name": "Адмирал",
-        "url": "dnevnie/admiral.html"
+        "name": "Batrachedra pinicolella",
+        "url": "glavnoe/babochki/Batrachedridae.html"
     },
     {
-        "name": "Махаон",
-        "url": "dnevnie/mahagon.html"
+        "name": "Batrachedra praeangusta",
+        "url": "glavnoe/babochki/Batrachedridae.html"
     },
     {
-        "name": "Зорька",
-        "url": "dnevnie/zorka.html"
+        "name": "Leistus ferrugineus",
+        "url": "glavnoe/babochki/Carabidae.html"
     },
     {
-        "name": "Перламутровка",
-        "url": "dnevnie/perlamutrovka.html"
+        "name": "Notiophilus aquaticus",
+        "url": "glavnoe/babochki/Carabidae.html"
     },
     {
-        "name": "Голубянка икар",
-        "url": "dnevnie/golubyanka-ikar.html"
-    },
-
-    {
-        "name": "Моль платяная",
-        "url": "mikro/mol-platyanaya.html"
+        "name": "Notiophilus germinyi",
+        "url": "glavnoe/babochki/Carabidae.html"
     },
     {
-        "name": "Огнёвка капустная",
-        "url": "mikro/ognevka-kapustnaya.html"
+        "name": "Caenolyda reticulata",
+        "url": "glavnoe/babochki/Cephalciinae.html"
     },
     {
-        "name": "Моль яблоневая",
-        "url": "mikro/mol-yablonevaya.html"
+        "name": "Cephalcia abietis",
+        "url": "glavnoe/babochki/Cephalciinae.html"
     },
     {
-        "name": "Стеклянница",
-        "url": "mikro/steklyannica.html"
+        "name": "Cephalcia abietis",
+        "url": "glavnoe/babochki/Cephalciinae.html"
+    },
+        {
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Моль зерновая",
-        "url": "mikro/mol-zernovaya.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Моль восковая",
-        "url": "mikro/mol-voskovaya.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Листовёртка",
-        "url": "mikro/listovertka.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Моль огнёвка",
-        "url": "mikro/mol-ognevka.html"
-    },
-
-    {
-        "name": "Медведица кая",
-        "url": "nochnye/medvedica-kaya.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Совка гамма",
-        "url": "nochnye/sovka-gamma.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Ленточница",
-        "url": "nochnye/lentochnica.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
+    },
+        {
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Бражник глазчатый",
-        "url": "nochnye/brazhnik-glazchatyy.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Пяденица",
-        "url": "nochnye/pyadenica.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Волнянка",
-        "url": "nochnye/volnyanka.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Шелкопряд",
-        "url": "nochnye/shelkopryad.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Совка озимая",
-        "url": "nochnye/sovka-ozimaya.html"
-    },
-
-    {
-        "name": "Гусеница махаона",
-        "url": "gusenicy/gusenica-mahaona.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Гусеница капустницы",
-        "url": "gusenicy/gusenica-kapustnicy.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
+    },
+        {
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Гусеница павлиньего глаза",
-        "url": "gusenicy/gusenica-pavliniego-glaza.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Гусеница бражника",
-        "url": "gusenicy/gusenica-brazhnika.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Гусеница медведицы",
-        "url": "gusenicy/gusenica-medvedicy.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Гусеница совки",
-        "url": "gusenicy/gusenica-sovki.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Гусеница шелкопряда",
-        "url": "gusenicy/gusenica-shelkopryada.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Гусеница пяденицы",
-        "url": "gusenicy/gusenica-pyadenicy.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
-
-    {
-        "name": "Жук-олень",
-        "url": "juki/zhuk-olen.html"
-    },
-    {
-        "name": "Майский жук",
-        "url": "juki/mayskiy-zhuk.html"
+        {
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Божья коровка",
-        "url": "juki/bozhya-korovka.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Колорадский жук",
-        "url": "juki/koloradskiy-zhuk.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Жук-носорог",
-        "url": "juki/zhuk-nosorog.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Светлячок",
-        "url": "juki/svetlyachok.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Жук-короед",
-        "url": "juki/zhuk-koroed.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Жук-плавунец",
-        "url": "juki/zhuk-plavunec.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
-
-    {
-        "name": "Ложногусеница розанная",
-        "url": "lojnogusenicy/lozhnogusenica-rozannaya.html"
-    },
-    {
-        "name": "Ложногусеница сосновая",
-        "url": "lojnogusenicy/lozhnogusenica-sosnovaya.html"
+        {
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Пилильщик яблонный",
-        "url": "lojnogusenicy/pililshchik-yablonnyy.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Пилильщик вишнёвый",
-        "url": "lojnogusenicy/pililshchik-vishnevyi.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Ложногусеница смородинная",
-        "url": "lojnogusenicy/lozhnogusenica-smorodinnaya.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Пилильщик хвойный",
-        "url": "lojnogusenicy/pililshchik-hvoynyy.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Ложногусеница крыжовниковая",
-        "url": "lojnogusenicy/lozhnogusenica-kryzhovnikovaya.html"
+        "name": "",
+        "url": "glavnoe/babochki/"
     },
     {
-        "name": "Пилильщик берёзовый",
-        "url": "lojnogusenicy/pililshchik-berezovyy.html"
-    }
+        "name": "",
+        "url": "glavnoe/babochki/"
+    },
+        {
+        "name": "",
+        "url": "glavnoe/babochki/"
+    },
+    {
+        "name": "",
+        "url": "glavnoe/babochki/"
+    },
+    {
+        "name": "",
+        "url": "glavnoe/babochki/"
+    },
+    {
+        "name": "",
+        "url": "glavnoe/babochki/"
+    },
 ]
+
