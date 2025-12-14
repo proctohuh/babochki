@@ -1,107 +1,106 @@
 /* === СБРОС ОТСТУПОВ === */
-        html, body {
-            margin: 0; padding: 0; height: 100%; width: 100%;
-        }
-        * { box-sizing: border-box; }
+html, body {
+    margin: 0; padding: 0; height: 100%; width: 100%;
+}
+* { box-sizing: border-box; }
 
-        /* === ОСНОВНЫЕ СТИЛИ === */
-        body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background: #000;
-            color: #0f0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow-x: hidden;
-        }
+/* === ОСНОВНЫЕ СТИЛИ === */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: #000;
+    color: #0f0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+}
 
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: url('https://img.freepik.com/premium-photo/butterflies-symphony-colors_1170794-83990.jpg?semt=ais_hybrid&w=740&q=80') center/cover no-repeat;
-            background-attachment: fixed;
-            filter: brightness(0.35);
-            z-index: -2;
-        }
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://img.freepik.com/premium-photo/butterflies-symphony-colors_1170794-83990.jpg?semt=ais_hybrid&w=740&q=80') center/cover no-repeat;
+    background-attachment: fixed;
+    filter: brightness(0.35);
+    z-index: -2;
+}
 
-        .overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.3);
-            z-index: -1;
-        }
+.overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: -1;
+}
 
-        /* === HEADER === */
-        header {
-            background: linear-gradient(to bottom, rgba(0,51,102,0.98), rgba(0,0,51,0.98));
-            padding: 8px;
-            border-bottom: 3px solid #00f;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(6px);
-            width: 100%;
-        }
+/* === HEADER === */
+header {
+    background: linear-gradient(to bottom, rgba(0,51,102,0.98), rgba(0,0,51,0.98));
+    padding: 8px;
+    border-bottom: 3px solid #00f;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(6px);
+    width: 100%;
+}
 
-        .nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 0 auto;
-            max-width: 1200px;
-            padding: 0 10px;
-        }
-        
-        .nav a {
-            width: 48px; height: 48px; background: #113; border: 2px solid #00f; border-radius: 8px;
-            overflow: hidden; position: relative; transition: 0.2s; box-shadow: 0 0 8px #0f0;
-        }
-        .nav a:hover { transform: scale(1.1); box-shadow: 0 0 16px #0ff; }
-        .nav a img { width: 100%; height: 100%; object-fit: cover; }
-        
-        .nav a.home { 
-            background: #113 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300f"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>') center/60% no-repeat; 
-        }
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 10px;
+}
 
+.nav a {
+    width: 48px; height: 48px; background: #113; border: 2px solid #00f; border-radius: 8px;
+    overflow: hidden; position: relative; transition: 0.2s; box-shadow: 0 0 8px #0f0;
+}
+.nav a:hover { transform: scale(1.1); box-shadow: 0 0 16px #0ff; }
+.nav a img { width: 100%; height: 100%; object-fit: cover; }
 
-        .search-box { flex: 1; max-width: 180px; }
-        .search-box input {
-            width: 100%; padding: 6px; border: 2px solid #00f;
-            background: #113; color: #0ff; border-radius: 6px;
-        }
+.nav a.home { 
+    background: #113 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300f"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>') center/60% no-repeat; 
+}
 
-        .new-badge {
-            position: absolute; top: -6px; right: -6px; background: #f00;
-            color: #fff; font-size: 10px; padding: 2px 4px; border-radius: 4px;
-            animation: p 2s infinite;
-        }
-        @keyframes p { 50% { transform: scale(1.2); } }
+.search-box { flex: 1; max-width: 180px; }
+.search-box input {
+    width: 100%; padding: 6px; border: 2px solid #00f;
+    background: #113; color: #0ff; border-radius: 6px;
+}
 
-        /* === MAIN === */
-        main {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
+.new-badge {
+    position: absolute; top: -6px; right: -6px; background: #f00;
+    color: #fff; font-size: 10px; padding: 2px 4px; border-radius: 4px;
+    animation: p 2s infinite;
+}
+@keyframes p { 50% { transform: scale(1.2); } }
 
-        .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 0;
-            width: 100%;
-            max-width: 1200px;
-        }
+/* === MAIN === */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    width: 100%;
+    max-width: 1200px;
+}
 
 /* === БЛОК ДЛЯ ПК (начинается с 769px и выше) === */
-/* На ПК: КАК БЫЛО В ПЕРВОМ ВАРИАНТЕ */
+/* На ПК: КАК БЫЛО В ПЕРВОМ ВАРИАНТЕ + максимальная высота 20vh */
 @media (min-width: 769px) {
     .central-image {
         position: relative;
@@ -114,6 +113,9 @@
         
         /* НА ПК: КАК БЫЛО В ПЕРВОМ ВАРИАНТЕ */
         width: clamp(280px, 20vw, 600px);
+        
+        /* МАКСИМАЛЬНАЯ ВЫСОТА 20% ОТ ВЫСОТЫ ЭКРАНА */
+        max-height: 20vh;
         
         aspect-ratio: auto;
         margin: 40px auto;
