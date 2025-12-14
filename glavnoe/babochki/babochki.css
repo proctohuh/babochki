@@ -56,7 +56,6 @@
             padding: 0 10px;
         }
         
-        /* Остальные стили без изменений... */
         .nav a {
             width: 48px; height: 48px; background: #113; border: 2px solid #00f; border-radius: 8px;
             overflow: hidden; position: relative; transition: 0.2s; box-shadow: 0 0 8px #0f0;
@@ -101,7 +100,48 @@
             max-width: 1200px;
         }
 
-/* === МОБИЛЬНАЯ ВЕРСТКА — ВЕРТИКАЛЬНАЯ КОЛОНКА === */
+/* === БЛОК ДЛЯ ПК (начинается с 769px и выше) === */
+/* На ПК: картинка занимает 25% от ширины экрана, текст - 12% */
+@media (min-width: 769px) {
+    .central-image {
+        position: relative;
+        background: rgba(0,10,30,0.9);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 0 20px #0ff;
+        padding: 4px;
+        box-sizing: border-box;
+        
+        /* НА ПК: 25% от ширины экрана пользователя */
+        width: 25vw; /* 25% от ширины viewport */
+        min-width: 300px; /* Минимальный размер */
+        max-width: 500px; /* Максимальный размер */
+        
+        aspect-ratio: auto;
+        margin: 40px auto;
+    }
+    
+    .butterfly-text {
+        font-family: 'Arial', sans-serif; 
+        font-weight: bold;
+        /* НА ПК: 12% от ширины экрана пользователя */
+        font-size: 12vw; /* 12% от ширины viewport */
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: #00f;
+        text-align: center;
+        margin: 0;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        line-height: 1.2;
+        
+        /* Ограничиваем размер шрифта */
+        max-font-size: 48px;
+        min-font-size: 24px;
+    }
+}
+
+/* === БЛОК ДЛЯ ТЕЛЕФОНА (до 768px) === */
+/* На телефоне: картинка занимает 10% от ширины экрана, текст - 2% */
 @media (max-width: 768px) {
     main {
         flex-direction: column;
@@ -116,41 +156,46 @@
         max-width: 400px;
     }
 
-    /* НА ТЕЛЕФОНАХ: 10% от ширины экрана пользователя для изображения */
     .central-image {
+        position: relative;
+        background: rgba(0,10,30,0.9);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 0 20px #0ff;
+        padding: 4px;
+        box-sizing: border-box;
+        
+        /* НА ТЕЛЕФОНЕ: 10% от ширины экрана пользователя */
         width: 10vw; /* 10% от ширины viewport */
-        min-width: 120px;
-        max-width: 280px;
-        margin: 20px auto; /* Уменьшаем отступ на мобилках */
+        min-width: 120px; /* Минимальный размер */
+        max-width: 280px; /* Максимальный размер */
+        
+        aspect-ratio: auto;
+        margin: 20px auto;
     }
-
-    /* НА ТЕЛЕФОНАХ: 2% от ширины экрана для текста */
+    
     .butterfly-text {
+        font-family: 'Arial', sans-serif; 
+        font-weight: bold;
+        /* НА ТЕЛЕФОНЕ: 2% от ширины экрана пользователя */
         font-size: 2vw; /* 2% от ширины viewport */
-        min-font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: #00f;
+        text-align: center;
+        margin: 0;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        line-height: 1.2;
+        
+        /* Ограничиваем размер шрифта */
         max-font-size: 28px;
+        min-font-size: 14px;
     }
 }
 
-/* === ЦЕНТРАЛЬНОЕ ОКНО С СИНИМИ ГРАНИЦАМИ === */
-/* ВЕРНУЛ КАК БЫЛО НА ПК - НЕ ТРОГАЕМ */
-.central-image {
-    position: relative;
-    background: rgba(0,10,30,0.9);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 0 20px #0ff;
-    padding: 4px;
-    box-sizing: border-box;
-    
-    /* КАК БЫЛО РАНЬШЕ НА ПК */
-    width: clamp(280px, 20vw, 600px);
-    
-    aspect-ratio: auto;
-    margin: 40px auto;
-}
+/* === ОБЩИЕ СТИЛИ ДЛЯ ВСЕХ УСТРОЙСТВ === */
 
-/* Синяя рамка */
+/* Синяя рамка для изображения */
 .central-image::before {
     content: '';
     position: absolute;
@@ -168,31 +213,12 @@
     display: block;
 }
 
-/* === ТЕКСТ ПОД КАРТИНКОЙ === */
-/* ВЕРНУЛ КАК БЫЛО НА ПК - НЕ ТРОГАЕМ */
-.butterfly-text {
-    font-family: 'Arial', sans-serif; 
-    font-weight: bold;
-    /* КАК БЫЛО РАНЬШЕ НА ПК */
-    font-size: clamp(1.2rem, 2.8vw, 2.8rem);
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: #00f;
-    text-align: center;
-    margin: 0;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-    line-height: 1.2;
-}
-
-/* === АДАПТИВ === */
-@media (max-width: 900px) {
-    .content { padding: 15px; }
-}
+/* === АДАПТИВ ДЛЯ ОЧЕНЬ МАЛЕНЬКИХ ЭКРАНОВ === */
 @media (max-width: 600px) {
     .nav a { width: 40px; height: 40px; }
     .search-box { max-width: 120px; }
     
-    /* Дополнительные настройки для очень маленьких экранов */
+    /* Дополнительные настройки для очень маленьких экранов телефона */
     .central-image {
         width: 15vw; /* Чуть больше на очень маленьких экранах */
         min-width: 100px;
@@ -201,5 +227,18 @@
     .butterfly-text {
         font-size: 3vw; /* Чуть больше на очень маленьких экранах */
         min-font-size: 12px;
+    }
+}
+
+/* === АДАПТИВ ДЛЯ ОЧЕНЬ БОЛЬШИХ ЭКРАНОВ ПК === */
+@media (min-width: 1920px) {
+    .central-image {
+        width: 20vw; /* Чуть меньше на очень больших экранах */
+        max-width: 600px;
+    }
+    
+    .butterfly-text {
+        font-size: 10vw; /* Чуть меньше на очень больших экранах */
+        max-font-size: 60px;
     }
 }
