@@ -1,107 +1,106 @@
 /* === СБРОС ОТСТУПОВ === */
-        html, body {
-            margin: 0; padding: 0; height: 100%; width: 100%;
-        }
-        * { box-sizing: border-box; }
+html, body {
+    margin: 0; padding: 0; height: 100%; width: 100%;
+}
+* { box-sizing: border-box; }
 
-        /* === ОСНОВНЫЕ СТИЛИ === */
-        body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background: #000;
-            color: #0f0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow-x: hidden;
-        }
+/* === ОСНОВНЫЕ СТИЛИ === */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: #000;
+    color: #0f0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+}
 
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: url('https://img.freepik.com/premium-photo/butterflies-symphony-colors_1170794-83990.jpg?semt=ais_hybrid&w=740&q=80') center/cover no-repeat;
-            background-attachment: fixed;
-            filter: brightness(0.35);
-            z-index: -2;
-        }
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://img.freepik.com/premium-photo/butterflies-symphony-colors_1170794-83990.jpg?semt=ais_hybrid&w=740&q=80') center/cover no-repeat;
+    background-attachment: fixed;
+    filter: brightness(0.35);
+    z-index: -2;
+}
 
-        .overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.3);
-            z-index: -1;
-        }
+.overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: -1;
+}
 
-        /* === HEADER === */
-        header {
-            background: linear-gradient(to bottom, rgba(0,51,102,0.98), rgba(0,0,51,0.98));
-            padding: 8px;
-            border-bottom: 3px solid #00f;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(6px);
-            width: 100%;
-        }
+/* === HEADER === */
+header {
+    background: linear-gradient(to bottom, rgba(0,51,102,0.98), rgba(0,0,51,0.98));
+    padding: 8px;
+    border-bottom: 3px solid #00f;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(6px);
+    width: 100%;
+}
 
-        .nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 0 auto;
-            max-width: 1200px;
-            padding: 0 10px;
-        }
-        
-        .nav a {
-            width: 48px; height: 48px; background: #113; border: 2px solid #00f; border-radius: 8px;
-            overflow: hidden; position: relative; transition: 0.2s; box-shadow: 0 0 8px #0f0;
-        }
-        .nav a:hover { transform: scale(1.1); box-shadow: 0 0 16px #0ff; }
-        .nav a img { width: 100%; height: 100%; object-fit: cover; }
-        
-        .nav a.home { 
-            background: #113 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300f"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>') center/60% no-repeat; 
-        }
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 10px;
+}
 
+.nav a {
+    width: 48px; height: 48px; background: #113; border: 2px solid #00f; border-radius: 8px;
+    overflow: hidden; position: relative; transition: 0.2s; box-shadow: 0 0 8px #0f0;
+}
+.nav a:hover { transform: scale(1.1); box-shadow: 0 0 16px #0ff; }
+.nav a img { width: 100%; height: 100%; object-fit: cover; }
 
-        .search-box { flex: 1; max-width: 180px; }
-        .search-box input {
-            width: 100%; padding: 6px; border: 2px solid #00f;
-            background: #113; color: #0ff; border-radius: 6px;
-        }
+.nav a.home { 
+    background: #113 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300f"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>') center/60% no-repeat; 
+}
 
-        .new-badge {
-            position: absolute; top: -6px; right: -6px; background: #f00;
-            color: #fff; font-size: 10px; padding: 2px 4px; border-radius: 4px;
-            animation: p 2s infinite;
-        }
-        @keyframes p { 50% { transform: scale(1.2); } }
+.search-box { flex: 1; max-width: 180px; }
+.search-box input {
+    width: 100%; padding: 6px; border: 2px solid #00f;
+    background: #113; color: #0ff; border-radius: 6px;
+}
 
-        /* === MAIN === */
-        main {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
+.new-badge {
+    position: absolute; top: -6px; right: -6px; background: #f00;
+    color: #fff; font-size: 10px; padding: 2px 4px; border-radius: 4px;
+    animation: p 2s infinite;
+}
+@keyframes p { 50% { transform: scale(1.2); } }
 
-        .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 0;
-            width: 100%;
-            max-width: 1200px;
-        }
+/* === MAIN === */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    width: 100%;
+    max-width: 1200px;
+}
 
 /* === БЛОК ДЛЯ ПК (начинается с 769px и выше) === */
-/* На ПК: КАК БЫЛО В ПЕРВОМ ВАРИАНТЕ */
+/* НА ПК: АВТОМАТИЧЕСКОЕ ОПРЕДЕЛЕНИЕ ОРИЕНТАЦИИ ИЗОБРАЖЕНИЯ */
 @media (min-width: 769px) {
     .central-image {
         position: relative;
@@ -111,18 +110,34 @@
         box-shadow: 0 0 20px #0ff;
         padding: 4px;
         box-sizing: border-box;
-        
-        /* НА ПК: КАК БЫЛО В ПЕРВОМ ВАРИАНТЕ */
-        width: clamp(280px, 20vw, 600px);
-        
-        aspect-ratio: auto;
         margin: 40px auto;
+        
+        /* БАЗОВЫЕ РАЗМЕРЫ ДЛЯ ГОРИЗОНТАЛЬНЫХ */
+        width: clamp(280px, 20vw, 600px);
+        height: auto;
+        aspect-ratio: auto;
     }
+    
+    /* АВТОМАТИЧЕСКОЕ ОПРЕДЕЛЕНИЕ: если высота > ширины = ВЕРТИКАЛЬНОЕ */
+    .central-image img {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+    }
+    
+    /* CSS trick для вертикальных изображений: используем padding-bottom для aspect-ratio */
+    .central-image::after {
+        content: '';
+        display: block;
+        padding-bottom: 75%; /* Базовый для горизонтальных (ширина:высота = 4:3) */
+    }
+    
+    /* JavaScript будет динамически менять padding-bottom для вертикальных */
     
     .butterfly-text {
         font-family: 'Arial', sans-serif; 
         font-weight: bold;
-        /* НА ПК: КАК БЫЛО В ПЕРВОМ ВАРИАНТЕ - НОРМАЛЬНЫЙ РАЗМЕР */
         font-size: clamp(1.2rem, 2.8vw, 2.8rem);
         text-transform: uppercase;
         letter-spacing: 0.15em;
@@ -135,7 +150,6 @@
 }
 
 /* === БЛОК ДЛЯ ТЕЛЕФОНА (до 768px) === */
-/* На телефоне: увеличил картинку и текст в 1.5 раза */
 @media (max-width: 768px) {
     main {
         flex-direction: column;
@@ -159,11 +173,9 @@
         padding: 4px;
         box-sizing: border-box;
         
-        /* НА ТЕЛЕФОНЕ: УВЕЛИЧИЛ В 1.5 РАЗА (было 10vw, стало 15vw) */
-        width: 15vw; /* 15% от ширины viewport (в 1.5 раза больше) */
-        min-width: 180px; /* В 1.5 раза больше (было 120px) */
-        max-width: 350px; /* В 1.5 раза больше (было 280px) */
-        
+        width: 15vw;
+        min-width: 180px;
+        max-width: 350px;
         aspect-ratio: auto;
         margin: 20px auto;
     }
@@ -171,8 +183,7 @@
     .butterfly-text {
         font-family: 'Arial', sans-serif; 
         font-weight: bold;
-        /* НА ТЕЛЕФОНЕ: УВЕЛИЧИЛ В 1.5 РАЗА (было 2vw, стало 3vw) */
-        font-size: 3vw; /* 3% от ширины viewport (в 1.5 раза больше) */
+        font-size: 3vw;
         text-transform: uppercase;
         letter-spacing: 0.15em;
         color: #00f;
@@ -180,16 +191,12 @@
         margin: 0;
         text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         line-height: 1.2;
-        
-        /* Ограничиваем размер шрифта (тоже увеличил в 1.5 раза) */
-        max-font-size: 42px; /* В 1.5 раза больше (было 28px) */
-        min-font-size: 21px; /* В 1.5 раза больше (было 14px) */
+        max-font-size: 42px;
+        min-font-size: 21px;
     }
 }
 
 /* === ОБЩИЕ СТИЛИ ДЛЯ ВСЕХ УСТРОЙСТВ === */
-
-/* Синяя рамка для изображения */
 .central-image::before {
     content: '';
     position: absolute;
@@ -205,6 +212,9 @@
     height: 100%;
     object-fit: contain;
     display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 /* === АДАПТИВ ДЛЯ ОЧЕНЬ МАЛЕНЬКИХ ЭКРАНОВ === */
@@ -212,27 +222,24 @@
     .nav a { width: 40px; height: 40px; }
     .search-box { max-width: 120px; }
     
-    /* Дополнительные настройки для очень маленьких экранов телефона */
     .central-image {
-        width: 22vw; /* Чуть больше на очень маленьких экранах (в 1.5 раза) */
-        min-width: 150px; /* В 1.5 раза больше */
+        width: 22vw;
+        min-width: 150px;
     }
     
     .butterfly-text {
-        font-size: 4.5vw; /* В 1.5 раза больше (было 3vw) */
-        min-font-size: 18px; /* В 1.5 раза больше */
+        font-size: 4.5vw;
+        min-font-size: 18px;
     }
 }
 
 /* === АДАПТИВ ДЛЯ ОЧЕНЬ БОЛЬШИХ ЭКРАНОВ ПК === */
 @media (min-width: 1920px) {
     .central-image {
-        /* Оставляем как в первом варианте для ПК */
         max-width: 600px;
     }
     
     .butterfly-text {
-        /* Оставляем как в первом варианте для ПК */
         max-font-size: 2.8rem;
     }
 }
