@@ -166,7 +166,7 @@
         box-sizing: border-box;
         
         /* НА ТЕЛЕФОНЕ: 10% от ширины экрана пользователя */
-        width: 10vw; /* 10% от ширины viewport */
+        width: 30vw; /* 10% от ширины viewport */
         min-width: 120px; /* Минимальный размер */
         max-width: 280px; /* Максимальный размер */
         
@@ -178,7 +178,7 @@
         font-family: 'Arial', sans-serif; 
         font-weight: bold;
         /* НА ТЕЛЕФОНЕ: 2% от ширины экрана пользователя */
-        font-size: 2vw; /* 2% от ширины viewport */
+        font-size: 5vw; /* 2% от ширины viewport */
         text-transform: uppercase;
         letter-spacing: 0.15em;
         color: #00f;
