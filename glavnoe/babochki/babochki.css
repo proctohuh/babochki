@@ -111,14 +111,18 @@ main {
         padding: 4px;
         box-sizing: border-box;
         
-        /* Размеры как было */
-        width: clamp(280px, 20vw, 600px);
-        aspect-ratio: auto;
-        margin: 40px auto;
-        
-        /* НОВОЕ: ограничение высоты */
+        /* Ограничение по высоте */
         max-height: 20vh;
+        
+        /* Автоматические размеры для сохранения пропорций */
+        width: auto;
         height: auto;
+        
+        /* Центрирование */
+        margin: 40px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .butterfly-text {
@@ -134,10 +138,12 @@ main {
         line-height: 1.2;
     }
     
-    /* Убедись, что изображение внутри корректно масштабируется */
     .central-image img {
-        width: 100%;
-        height: 100%;
+        /* Сохраняем пропорции изображения */
+        max-height: 20vh;
+        width: auto;
+        height: auto;
+        max-width: 100%;
         object-fit: contain;
         display: block;
     }
