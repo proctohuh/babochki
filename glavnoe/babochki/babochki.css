@@ -111,29 +111,19 @@ main {
         padding: 4px;
         box-sizing: border-box;
         
-        /* НА ПК: КАК БЫЛО В ПЕРВОМ ВАРИАНТЕ */
+        /* Размеры как было */
         width: clamp(280px, 20vw, 600px);
-        
-        /* МАКСИМАЛЬНАЯ ВЫСОТА 20% ОТ ВЫСОТЫ ЭКРАНА */
-        max-height: 20vh;
-        height: auto; /* Добавлено для правильного масштабирования */
-        
         aspect-ratio: auto;
         margin: 40px auto;
-    }
-    
-    .central-image img {
-        height: 100%; /* Изменено с height: 100% на height: 100% + width: auto для масштабирования */
-        width: auto;
-        max-width: 100%;
-        object-fit: contain;
-        display: block;
+        
+        /* НОВОЕ: ограничение высоты */
+        max-height: 20vh;
+        height: auto;
     }
     
     .butterfly-text {
-        font-family: 'Arial', sans-serif; 
+        font-family: 'Arial', sans-serif;
         font-weight: bold;
-        /* НА ПК: КАК БЫЛО В ПЕРВОМ ВАРИАНТЕ - НОРМАЛЬНЫЙ РАЗМЕР */
         font-size: clamp(1.2rem, 2.8vw, 2.8rem);
         text-transform: uppercase;
         letter-spacing: 0.15em;
@@ -142,6 +132,14 @@ main {
         margin: 0;
         text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         line-height: 1.2;
+    }
+    
+    /* Убедись, что изображение внутри корректно масштабируется */
+    .central-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
     }
 }
 
