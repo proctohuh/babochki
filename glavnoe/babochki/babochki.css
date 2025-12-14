@@ -128,7 +128,7 @@
         box-sizing: border-box;
         
         /* НА ПК: КАК БЫЛО В ПЕРВОМ ВАРИАНТЕ */
-        width: clamp(280px, 2vw, 600px);
+        width: clamp(280px, 1vw, 600px);
         
         aspect-ratio: auto;
         margin: 40px auto;
@@ -138,7 +138,7 @@
         font-family: 'Arial', sans-serif; 
         font-weight: bold;
         /* НА ПК: КАК БЫЛО В ПЕРВОМ ВАРИАНТЕ - НОРМАЛЬНЫЙ РАЗМЕР */
-        font-size: clamp(1.2rem, 2.8vw, 2.8rem);
+        font-size: clamp(1.2rem, 1.5vw, 2.8rem);
         text-transform: uppercase;
         letter-spacing: 0.15em;
         color: #00f;
