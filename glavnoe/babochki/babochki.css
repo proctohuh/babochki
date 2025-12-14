@@ -1,4 +1,4 @@
-        /* === СБРОС ОТСТУПОВ === */
+/* === СБРОС ОТСТУПОВ === */
         html, body {
             margin: 0; padding: 0; height: 100%; width: 100%;
         }
@@ -100,6 +100,7 @@
             width: 100%;
             max-width: 1200px;
         }
+
 /* === МОБИЛЬНАЯ ВЕРСТКА — ВЕРТИКАЛЬНАЯ КОЛОНКА === */
 @media (max-width: 768px) {
     main {
@@ -116,18 +117,24 @@
         max-width: 400px;
     }
 
-    /* Немного уменьшаем картинку на совсем маленьких экранах */
+    /* НА ТЕЛЕФОНАХ: 10% от ширины экрана пользователя для изображения */
     .central-image {
-        width: clamp(260px, 1vw, 380px);
+        width: 10vw; /* 10% от ширины viewport */
+        min-width: 120px; /* Минимальный размер чтобы не было слишком мелко */
+        max-width: 280px; /* Максимальный размер на больших экранах */
     }
 
+    /* НА ТЕЛЕФОНАХ: 2% от ширины экрана для текста */
     .butterfly-text {
-        font-size: clamp(1rem, 1vw, 2rem);
+        font-size: 2vw; /* 2% от ширины viewport */
+        min-font-size: 14px; /* Минимальный размер шрифта */
+        max-font-size: 28px; /* Максимальный размер шрифта */
     }
 }
 
 /* Если хочешь, чтобы даже на планшетах (до 1024px) было вертикально — можно расширить до 1024px */
-        /* === ЦЕНТРАЛЬНОЕ ОКНО С СИНИМИ ГРАНИЦАМИ === */
+
+/* === ЦЕНТРАЛЬНОЕ ОКНО С СИНИМИ ГРАНИЦАМИ === */
 .central-image {
     position: relative;
     background: rgba(0,10,30,0.9);
@@ -164,27 +171,37 @@
     display: block;
 }
 
-        /* === ТЕКСТ ПОД КАРТИНКОЙ === */
-        .butterfly-text {
-            font-family: 'Arial', sans-serif; 
-            font-weight: bold;
-            font-size: clamp(1.2rem, 1vw, 2.8rem);
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: #00f;
-            text-align: center;
-            margin: 0;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-            line-height: 1.2;
-        }
+/* === ТЕКСТ ПОД КАРТИНКОЙ === */
+.butterfly-text {
+    font-family: 'Arial', sans-serif; 
+    font-weight: bold;
+    /* Используем clamp для десктопов и vw для мобилок */
+    font-size: clamp(1.2rem, 1vw, 2.8rem);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #00f;
+    text-align: center;
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    line-height: 1.2;
+}
 
-
-
-        /* === АДАПТИВ === */
-        @media (max-width: 900px) {
-            .content { padding: 15px; }
-        }
-        @media (max-width: 600px) {
-            .nav a { width: 40px; height: 40px; }
-            .search-box { max-width: 120px; }
-        }
+/* === АДАПТИВ === */
+@media (max-width: 900px) {
+    .content { padding: 15px; }
+}
+@media (max-width: 600px) {
+    .nav a { width: 40px; height: 40px; }
+    .search-box { max-width: 120px; }
+    
+    /* Дополнительные настройки для очень маленьких экранов */
+    .central-image {
+        width: 15vw; /* Чуть больше на очень маленьких экранах */
+        min-width: 100px;
+    }
+    
+    .butterfly-text {
+        font-size: 3vw; /* Чуть больше на очень маленьких экранах */
+        min-font-size: 12px;
+    }
+}
