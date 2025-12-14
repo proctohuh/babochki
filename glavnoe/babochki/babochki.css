@@ -101,6 +101,7 @@
         }
 
 /* === БЛОК ДЛЯ ПК (начинается с 769px и выше) === */
+/* На ПК: КАК БЫЛО В ПЕРВОМ ВАРИАНТЕ */
 @media (min-width: 769px) {
     .central-image {
         position: relative;
@@ -111,46 +112,17 @@
         padding: 4px;
         box-sizing: border-box;
         
-        /* ТОЛЬКО ШИРИНА - фиксированная */
+        /* НА ПК: КАК БЫЛО В ПЕРВОМ ВАРИАНТЕ */
         width: clamp(280px, 20vw, 600px);
         
-        /* Высота: АВТОМАТИЧЕСКАЯ - подстраивается под изображение */
-        height: auto;
-        
-        /* Убираем aspect-ratio - он нам не нужен */
-        /* aspect-ratio: auto; */
-        
-        /* Центрирование */
+        aspect-ratio: auto;
         margin: 40px auto;
-        
-        /* Чтобы контейнер растягивался по содержимому */
-        display: inline-block;
-        vertical-align: middle;
-    }
-    
-    /* Стили для внутреннего изображения - КЛЮЧЕВОЙ МОМЕНТ */
-    .central-image img {
-        /* Занимает всю доступную ширину контейнера */
-        width: 100%;
-        
-        /* Высота автоматически рассчитывается из пропорций изображения */
-        height: auto;
-        
-        /* Гарантируем, что изображение не будет растягиваться */
-        max-width: 100%;
-        
-        /* Отключаем любые ограничения по высоте */
-        max-height: none !important;
-        
-        display: block;
-        
-        /* object-fit НЕ ИСПОЛЬЗУЕМ - он может обрезать */
-        /* object-fit: contain; */
     }
     
     .butterfly-text {
         font-family: 'Arial', sans-serif; 
         font-weight: bold;
+        /* НА ПК: КАК БЫЛО В ПЕРВОМ ВАРИАНТЕ - НОРМАЛЬНЫЙ РАЗМЕР */
         font-size: clamp(1.2rem, 2.8vw, 2.8rem);
         text-transform: uppercase;
         letter-spacing: 0.15em;
@@ -161,6 +133,7 @@
         line-height: 1.2;
     }
 }
+
 /* === БЛОК ДЛЯ ТЕЛЕФОНА (до 768px) === */
 /* На телефоне: увеличил картинку и текст в 1.5 раза */
 @media (max-width: 768px) {
