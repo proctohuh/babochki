@@ -113,7 +113,7 @@
         box-sizing: border-box;
         
         /* НА ПК: КАК БЫЛО В ПЕРВОМ ВАРИАНТЕ */
-        width: clamp(280px, 20vw, 600px);
+        width: clamp(280px, 15vw, 600px);
         
         aspect-ratio: auto;
         margin: 40px auto;
