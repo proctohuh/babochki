@@ -112,7 +112,7 @@ main {
         box-sizing: border-box;
         
         /* Ограничение по высоте */
-        max-height: 1vh;
+        max-height: 100vh;
         
         /* Автоматические размеры для сохранения пропорций */
         width: auto;
