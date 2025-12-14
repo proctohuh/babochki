@@ -118,6 +118,21 @@
         aspect-ratio: auto;
         margin: 40px auto;
     }
+    .central-image.vertical {
+        position: relative;
+        background: rgba(0,10,30,0.9);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 0 20px #0ff;
+        padding: 4px;
+        box-sizing: border-box;
+        
+        /* НА ПК: КАК БЫЛО В ПЕРВОМ ВАРИАНТЕ */
+        width: clamp(280px, 2vw, 600px);
+        
+        aspect-ratio: auto;
+        margin: 40px auto;
+    }
     
     .butterfly-text {
         font-family: 'Arial', sans-serif; 
