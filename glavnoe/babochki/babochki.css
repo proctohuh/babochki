@@ -116,9 +116,18 @@ main {
         
         /* МАКСИМАЛЬНАЯ ВЫСОТА 20% ОТ ВЫСОТЫ ЭКРАНА */
         max-height: 20vh;
+        height: auto; /* Добавлено для правильного масштабирования */
         
         aspect-ratio: auto;
         margin: 40px auto;
+    }
+    
+    .central-image img {
+        height: 100%; /* Изменено с height: 100% на height: 100% + width: auto для масштабирования */
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+        display: block;
     }
     
     .butterfly-text {
