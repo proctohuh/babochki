@@ -101,7 +101,7 @@
         }
 
 /* === БЛОК ДЛЯ ПК (начинается с 769px и выше) === */
-/* На ПК: картинка занимает 25% от ширины экрана, текст - 12% */
+/* На ПК: КАК БЫЛО В ПЕРВОМ ВАРИАНТЕ */
 @media (min-width: 769px) {
     .central-image {
         position: relative;
@@ -112,10 +112,8 @@
         padding: 4px;
         box-sizing: border-box;
         
-        /* НА ПК: 25% от ширины экрана пользователя */
-        width: 25vw; /* 25% от ширины viewport */
-        min-width: 300px; /* Минимальный размер */
-        max-width: 500px; /* Максимальный размер */
+        /* НА ПК: КАК БЫЛО В ПЕРВОМ ВАРИАНТЕ */
+        width: clamp(280px, 20vw, 600px);
         
         aspect-ratio: auto;
         margin: 40px auto;
@@ -124,8 +122,8 @@
     .butterfly-text {
         font-family: 'Arial', sans-serif; 
         font-weight: bold;
-        /* НА ПК: 12% от ширины экрана пользователя */
-        font-size: 12vw; /* 12% от ширины viewport */
+        /* НА ПК: КАК БЫЛО В ПЕРВОМ ВАРИАНТЕ - НОРМАЛЬНЫЙ РАЗМЕР */
+        font-size: clamp(1.2rem, 2.8vw, 2.8rem);
         text-transform: uppercase;
         letter-spacing: 0.15em;
         color: #00f;
@@ -133,15 +131,11 @@
         margin: 0;
         text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         line-height: 1.2;
-        
-        /* Ограничиваем размер шрифта */
-        max-font-size: 48px;
-        min-font-size: 24px;
     }
 }
 
 /* === БЛОК ДЛЯ ТЕЛЕФОНА (до 768px) === */
-/* На телефоне: картинка занимает 10% от ширины экрана, текст - 2% */
+/* На телефоне: увеличил картинку и текст в 1.5 раза */
 @media (max-width: 768px) {
     main {
         flex-direction: column;
@@ -152,7 +146,7 @@
 
     .content {
         margin: 20px 0;
-        width: 50vw;
+        width: 90vw;
         max-width: 400px;
     }
 
@@ -165,10 +159,10 @@
         padding: 4px;
         box-sizing: border-box;
         
-        /* НА ТЕЛЕФОНЕ: 10% от ширины экрана пользователя */
-        width: 70vw; /* 10% от ширины viewport */
-        min-width: 120px; /* Минимальный размер */
-        max-width: 280px; /* Максимальный размер */
+        /* НА ТЕЛЕФОНЕ: УВЕЛИЧИЛ В 1.5 РАЗА (было 10vw, стало 15vw) */
+        width: 15vw; /* 15% от ширины viewport (в 1.5 раза больше) */
+        min-width: 180px; /* В 1.5 раза больше (было 120px) */
+        max-width: 350px; /* В 1.5 раза больше (было 280px) */
         
         aspect-ratio: auto;
         margin: 20px auto;
@@ -177,8 +171,8 @@
     .butterfly-text {
         font-family: 'Arial', sans-serif; 
         font-weight: bold;
-        /* НА ТЕЛЕФОНЕ: 2% от ширины экрана пользователя */
-        font-size: 4vw; /* 2% от ширины viewport */
+        /* НА ТЕЛЕФОНЕ: УВЕЛИЧИЛ В 1.5 РАЗА (было 2vw, стало 3vw) */
+        font-size: 3vw; /* 3% от ширины viewport (в 1.5 раза больше) */
         text-transform: uppercase;
         letter-spacing: 0.15em;
         color: #00f;
@@ -187,9 +181,9 @@
         text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         line-height: 1.2;
         
-        /* Ограничиваем размер шрифта */
-        max-font-size: 28px;
-        min-font-size: 14px;
+        /* Ограничиваем размер шрифта (тоже увеличил в 1.5 раза) */
+        max-font-size: 42px; /* В 1.5 раза больше (было 28px) */
+        min-font-size: 21px; /* В 1.5 раза больше (было 14px) */
     }
 }
 
@@ -220,25 +214,25 @@
     
     /* Дополнительные настройки для очень маленьких экранов телефона */
     .central-image {
-        width: 15vw; /* Чуть больше на очень маленьких экранах */
-        min-width: 100px;
+        width: 22vw; /* Чуть больше на очень маленьких экранах (в 1.5 раза) */
+        min-width: 150px; /* В 1.5 раза больше */
     }
     
     .butterfly-text {
-        font-size: 3vw; /* Чуть больше на очень маленьких экранах */
-        min-font-size: 12px;
+        font-size: 4.5vw; /* В 1.5 раза больше (было 3vw) */
+        min-font-size: 18px; /* В 1.5 раза больше */
     }
 }
 
 /* === АДАПТИВ ДЛЯ ОЧЕНЬ БОЛЬШИХ ЭКРАНОВ ПК === */
 @media (min-width: 1920px) {
     .central-image {
-        width: 20vw; /* Чуть меньше на очень больших экранах */
+        /* Оставляем как в первом варианте для ПК */
         max-width: 600px;
     }
     
     .butterfly-text {
-        font-size: 10vw; /* Чуть меньше на очень больших экранах */
-        max-font-size: 60px;
+        /* Оставляем как в первом варианте для ПК */
+        max-font-size: 2.8rem;
     }
 }
