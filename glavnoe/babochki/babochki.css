@@ -187,7 +187,7 @@
         font-family: 'Arial', sans-serif; 
         font-weight: bold;
         /* НА ТЕЛЕФОНЕ: УВЕЛИЧИЛ В 1.5 РАЗА (было 2vw, стало 3vw) */
-        font-size: 3vw; /* 3% от ширины viewport (в 1.5 раза больше) */
+        font-size: 1vw; /* 3% от ширины viewport (в 1.5 раза больше) */
         text-transform: uppercase;
         letter-spacing: 0.15em;
         color: #00f;
@@ -197,7 +197,7 @@
         line-height: 1.2;
         
         /* Ограничиваем размер шрифта (тоже увеличил в 1.5 раза) */
-        max-font-size: 42px; /* В 1.5 раза больше (было 28px) */
+        max-font-size: 21px; /* В 1.5 раза больше (было 28px) */
         min-font-size: 21px; /* В 1.5 раза больше (было 14px) */
     }
 }
