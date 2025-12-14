@@ -178,7 +178,7 @@
         font-family: 'Arial', sans-serif; 
         font-weight: bold;
         /* НА ТЕЛЕФОНЕ: 2% от ширины экрана пользователя */
-        font-size: 5vw; /* 2% от ширины viewport */
+        font-size: 3vw; /* 2% от ширины viewport */
         text-transform: uppercase;
         letter-spacing: 0.15em;
         color: #00f;
