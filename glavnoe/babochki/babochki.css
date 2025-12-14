@@ -118,7 +118,7 @@
 
     /* Немного уменьшаем картинку на совсем маленьких экранах */
     .central-image {
-        width: clamp(260px, 85vw, 380px);
+        width: clamp(260px, 20vw, 380px);
     }
 
     .butterfly-text {
